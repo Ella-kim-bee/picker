@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Picker</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="stylesheet" href="css/reset.css" type="text/css">
+	<link rel="stylesheet" href="css/common.css" type="text/css">
+	<link rel="stylesheet" href="css/index.css" type="text/css">
+	<style type="text/css">
+		
+	</style>
+
+	<!-- [if lt IE 9]
+		<script src="js/html5shiv.js"</script>
+	<![endif] -->
+</head>
+	
+<body>
+
+	<header>
+
+		<h1><a href="index.html"><span class="blind">Picker logo</span></a></h1>
+		<button class="btn_menu"><span class="blind">MENU</span></button>
+		<div class="add_wrap">
+			<a href="event.html">
+				<img src="images/img_index_header_gnb_banner_01.png" alt="2022 new year sale 50% off" />
+			</a>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="celebrity.html">Celebrity</a></li>
+				<li><a href="category.html">Category</a></li>
+				<li><a href="top10.html">TOP 10</a></li>
+				<li><a href="tone.html">TONE</a></li>
+				<li><a href="event.html">Event</a></li>
+				<li><a href="notice.html">Notice</a></li>
+				<li><a href="aboutus.html">About us</a></li>
+				<li><a href="mypage.html">My page</a></li>
+			</ul>
+		</nav>
+		
+	</header>
+
+	<section class="visual">
+
+		<h2 class="blind">visual section</h2>
+		<div class="slides cur">
+			<div class="rel">
+				<picture>
+					<source srcset="images/img_index_visual_01_TM.jpg" media="(max-width: 767px)">
+					<source srcset="images/img_index_visual_01_TM.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+					<source srcset="images/img_index_visual_01_D.jpg" media="(min-width: 1025px)">
+					<img src="images/img_index_visual_01_D.jpg" alt="makeup tools" />
+				</picture>
+				<p class="pre_title">Choosing beauty</p>
+				<p class="title"><span class="hr">Picker</span></p>
+			</div>
+		</div>
+		<div class="slides next">
+			<div class="rel">
+				<picture>
+					<source srcset="images/img_index_visual_02_TM.jpg" media="(max-width: 767px)">
+					<source srcset="images/img_index_visual_02_TM.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+					<source srcset="images/img_index_visual_02_D.jpg" media="(min-width: 1025px)">
+					<img src="images/img_index_visual_02_D.jpg" alt="붓칠한 4가지 색상" />
+				</picture>
+				<p class="pre_title">Fitting beauty</p>
+				<p class="title"><span class="hr">Picker</span></p>
+			</div>
+		</div>
+		<div class="pagination">
+			<button class="pages active"><span><span class="blind">slide01</span></span></button><!--
+		 --><button class="pages"><span><span class="blind">slide02</span></span></button>
+		</div>
+
+	</section>
+
+	<section class="weekly clearfix">
+
+		<div class="img_wrap">
+			<picture>
+				<source srcset="images/img_index_weekly_main_M.jpg" media="(max-width: 767px)">
+				<source srcset="images/img_index_weekly_main_T.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+				<source srcset="images/img_index_weekly_main_D.jpg" media="(min-width: 1025px)">
+				<img src="images/img_index_weekly_main_D.jpg" alt="수지 화보" />
+			</picture>
+			<div class="btn_tootips">
+				<button><span class="blind">tooltip eyebrow</span></button>
+				<button><span class="blind">tooltip eyeshadow</span></button>
+				<button><span class="blind">tooltip face</span></button>
+				<button><span class="blind">tooltip lip</span></button>
+			</div>
+		</div>
+		<div class="tooltip_wrap">
+			<div class="rel">
+				<div class="tt_img_wrap">
+					<img id="tt_img" src="images/img_index_weekly_tooltip_eyebrow.jpg" alt="shuuemura eyebrow" />
+				</div>
+				<div class="tt_info_wrap">
+					<p id="tt_title" class="title">shu uemura</p>
+					<p id="tt_desc" class="desc">하드 포뮬라 - 스톤 그레이</p>
+					<a id="tt_more" class="btn_common" href="eyebrow#shuuemura.html"><span>more</span></a>
+				</div>
+				<button><span class="blind">닫기</span></button>
+			</div>
+		</div>
+		<div class="info_wrap">
+			<div class="inner_wrap_half">
+				<div class="info">
+					<h2>Weekly Celebrity</h2>
+					<p class="title">수지</p>
+					<img src="images/img_index_weekly_sub.jpg" alt="립스틱을 들고있는 수지" />
+					<p class="desc"> 화사하고 매끈한 피부 표현과 함께 매혹적인 립 컬러로 다채로운 분위기를 연출했다. <br>고전적인 아름다움이 배가된 로우 번 헤어를 한 컷에서는 ‘가을가을한’ 분위기가 더없이 우아하다.</p>
+				</div>	
+			</div>
+		</div>
+
+	</section>
+
+	<section class="category">
+
+		<div class="inner_wrap clearfix">
+			<h2>Category</h2>
+			<ul class="cate_wrap_M">
+				<li><button>LIP</button></li>
+				<li><button>FACE</button></li>
+				<li><button>EYE</button></li>
+			</ul>
+			<ul class="cate_wrap">
+				<li class="lip_lists">
+					<a href="lipstick.html"><span>lipstick</span></a>
+				</li class="lip_lists">
+				<li>
+					<a href="liptint.html"><span>liptint</span></a>
+				</li>
+				<li class="lip_lists">
+					<a href="lipgloss.html"><span>lipgloss</span></a>
+				</li>
+				<li class="lip_lists">
+					<a href="lipbalm.html"><span>lipbalm</span></a>
+				</li>
+				<li class="face_lists">
+					<a href="foundation.html"><span>foundation</span></a>
+				</li>
+				<li class="face_lists">
+					<a href="powder / pact.html"><span>powder / pact</span></a>
+				</li>
+				<li class="face_lists">
+					<a href="shading.html"><span>shading</span></a>
+				</li>
+				<li class="face_lists">
+					<a href="blusher.html"><span>blusher</span></a>
+				</li>
+				<li class="eye_lists">
+					<a href="eyeshadow.html"><span>eyeshadow</span></a>
+				</li>
+				<li class="eye_lists">
+					<a href="eyeliner.html"><span>eyeliner</span></a>
+				</li>
+				<li class="eye_lists">
+					<a href="eyebrow.html"><span>eyebrow</span></a>
+				</li>
+				<li class="eye_lists">
+					<a href="mascara.html"><span>mascara</span></a>
+				</li>
+			</ul>
+		</div>
+
+	</section>
+
+	<section class="bestseller">
+		
+		<div class="inner_wrap">
+			<h2>Best Seller</h2>
+			<a class="btn_common" href="best.html"><span>more</span></a>
+		</div>
+		<div class="inner_wrap_02">
+			<div class="view_mask">
+				<ul class="clearfix">
+					<li>
+						<a href="liptint#3ce_01.html">
+							<div>
+								<img src="images/img_index_best_01.jpg" alt="3CE liptint" />
+								<span class="like active"><span class="blind">찜하기</span></span>
+							</div>
+							<p class="brand">3CE</p>
+							<p class="title">벨벳 립 틴트</p>
+							<p class="price">15,000원</p>
+							<p class="color">
+								<span class="color _red"><span class="blind">red</span></span>
+								<span class="color _pink"><span class="blind">pink</span></span>
+								<span class="color _coral"><span class="blind">coral</span></span>
+								<span class="color _nude"><span class="blind">nude</span></span>
+								<span class="color _rose"><span class="blind">rose</span></span>
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="lipgloss#dior_01.html">
+							<div>
+								<img src="images/img_index_best_02.jpg" alt="dior lipgloss" />
+								<span class="like"><span class="blind">찜하기</span></span>
+							</div>
+							<p class="brand">DIOR</p>
+							<p class="title">어딕트 립글로우</p>
+							<p class="price">40,000원</p>
+							<p class="color">
+								<span class="color _peach"><span class="blind">peach</span></span>
+								<span class="color _pink"><span class="blind">pink</span></span>
+								<span class="color _coral"><span class="blind">coral</span></span>								
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="powder_pact#saintlaurent_01.html">
+							<div>
+								<img src="images/img_index_best_03.jpg" alt="SaintLaurent pact" />
+								<span class="like"><span class="blind">찜하기</span></span>
+							</div>
+							<p class="brand">SAINT LAURENT</p>
+							<p class="title">엉크르 드 뽀 올아워 마블</p>
+							<p class="price">69,000원</p>
+							<p class="color">
+								<span class="color _21"><span class="blind">21호</span></span>
+								<span class="color _23"><span class="blind">23호</span></span>
+								<span class="color _25"><span class="blind">25호</span></span>								
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="eyeshadow#romand_01.html">
+							<div>
+								<img src="images/img_index_best_04.jpg" alt="romand eyeshadow" />
+								<span class="like"><span class="blind">찜하기</span></span>
+							</div>
+							<p class="brand">ROM&ND</p>
+							<p class="title">베러 댄 아이즈</p>
+							<p class="price">16,000원</p>							
+						</a>
+					</li>
+					<li>
+						<a href="mascara#kissme_01.html">
+							<div>
+								<img src="images/img_index_best_05.jpg" alt="kissme mascara" />
+								<span class="like"><span class="blind">찜하기</span></span>
+							</div>
+							<p class="brand">KISS ME</p>
+							<p class="title">히로인메이크 마스카라 (롱앤컬/볼륨앤컬)</p>
+							<p class="price">14,000원</p>
+							<p class="color">
+								<span class="color _brown"><span class="blind">brown</span></span>							
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="foundation#dior_01.html">
+							<div class="rel">
+								<img src="images/img_index_best_06.jpg" alt="dior foundation" />
+								<span class="like"><span class="blind">찜하기</span></span>
+							</div>
+							<p class="brand">DIOR</p>
+							<p class="title">포에버 스킨 글로우</p>
+							<p class="price">67,000원</p>
+							<p class="color">
+								<span class="color _21"><span class="blind">21호</span></span>
+								<span class="color _23"><span class="blind">23호</span></span>
+								<span class="color _25"><span class="blind">25호</span></span>							
+							</p>
+						</a>
+					</li>					
+				</ul>				
+			</div>
+			<button class="dir_btns prev" title="prev button"><span><span class="blind">prev</span></span></button>
+			<button class="dir_btns next" title="next button"><span><span class="blind">next</span></span></button>
+		</div>
+
+	</section>
+
+	<section class="toprank">
+
+		<div class="inner_wrap">
+			<h2>TOP RANK</h2>
+		</div>
+		<div class="tabs_wrap">
+			<ul class="clearfix">
+				<li class="active"><button>lipstick</button></li>
+				<li><button>liptint</button></li>
+				<li><button>lipgloss</button></li>
+				<li><button>lipbalm</button></li>
+				<li><button>foundation</button></li>
+				<li><button>powder/pact</button></li>
+				<li><button>shading</button></li>
+				<li><button>blusher</button></li>
+				<li><button>eyeshadow</button></li>
+				<li><button>eyeliner</button></li>
+				<li><button>eyebrow</button></li>
+				<li><button>mascara</button></li>
+				<li><span class="blind">menu bar</span></li>
+			</ul>			
+		</div>
+		<div class="inner_wrap view_mask">
+			<ul class="lists_wrap">
+				<li>
+					<ul class="product_wrap clearfix">
+						<li>
+							<a class="top_01 clearfix" href="lipstick#top01.html">
+								<div class="info">
+									<p class="brand">bobbibrown</p>
+									<p class="title">크러쉬드 샤인 젤리스틱</p>
+									<p class="price">38,000원</p>
+									<p class="color">
+										<span class="color _red"><span class="blind">red</span></span>
+										<span class="color _pink"><span class="blind">pink</span></span>
+										<span class="color _coral"><span class="blind">coral</span></span>
+										<span class="color _nude"><span class="blind">nude</span></span>
+										<span class="color _rose"><span class="blind">rose</span></span>
+									</p>
+								</div>
+								<img src="images/img_index_toprant_lipstick_01.jpg" alt="bobbibrown 크러쉬드 샤인 젤리스틱" />
+							</a>
+						</li>
+						<li>
+							<a class="top_02" href="lipstick#top02.html">
+								<div class="info">
+									<p class="brand">chanel</p>
+									<p class="title">루쥬 알뤼르 벨벳 엑스트렘</p>
+									<p class="price">47,000원</p>									
+								</div>
+								<img src="images/img_index_toprant_lipstick_02.jpg" alt="chanel 루쥬 알뤼르 벨벳 엑스트렘" />
+							</a>
+						</li>
+						<li>
+							<a class="top_03" href="lipstick#top03.html">
+								<div class="info">
+									<p class="brand">mac</p>
+									<p class="title">2021 맥 홀리데이 립스틱</p>
+									<p class="price">24,000원</p>									
+								</div>
+								<img src="images/img_index_toprant_lipstick_03.jpg" alt="mac 2021 맥 홀리데이 립스틱" />
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+	</section>
+
+	<section class="newbrand">
+
+		<div class="inner_wrap">
+			<h2>New Brand</h2>
+		</div>
+		<div class="title">
+			<img src="images/img_index_newbrand_logo.png" alt="토니모리 logo" / >
+			<p class="desc">
+				<span>Boundless beauty brand for <span>every lifestyle</span></span>
+			</p>
+		</div>
+		<div class="info_wrap">
+			<div class="inner_wrap">
+				<ul class="clearfix">
+					<li>
+						<img src="images/img_index_newbrand_01.jpg" alt="눈 감은 여자" />
+						<p class="desc">데이터 기반으로 개개인에 <br>맞춘, 고객이 원하는 제품을 <br>예측하여 제시합니다.</p>
+					</li>
+					<li>
+						<img src="images/img_index_newbrand_02.jpg" alt="토니모리 제품" />
+						<p class="desc">뷰티를 넘어 바이오, 패션, <br>생활용품 등 생활에 밀접한 <br>모든 분야를  제공합니다.</p>
+					</li>
+					<li>
+						<img src="images/img_index_newbrand_03.jpg" alt="포옹하는 여자 넷" />
+						<p class="desc">전세계 누구와도 쉽게 소통이 <br>가능하고  쉽게 접근 가능한 <br>맞춤형 뷰티 플랫폼 환경을 <br>제공합니다.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</section>
+
+	<section class="event">
+
+		<div class="inner_wrap">
+			<h2>Event</h2>
+			<a class="btn_common" href="best.html"><span>more</span></a>
+		</div>
+		<div class="inner_wrap_02">
+			<div class="view_mask">
+				<ul class="clearfix">
+					<li>
+						<img src="images/img_index_event_01.jpg" alt="화장대위에 있는 화장품을 잡으려는 손" />
+						<p class="title">첫 구매 15% OFF</p>
+						<p class="desc">첫 구매 고객 15% OFF부터<br>전 구매 무료 배송 혜택까지</p>
+					</li>
+					<li>
+						<img src="images/img_index_event_03.jpg" alt="크리스마스 디자인으로 포장된 화장품들" />
+						<p class="title">파우치 속 Luxury Item</p>
+						<p class="desc">메이크업 잇템 총집합<br>5만원 이상 구매 시 파우치 증정</p>
+					</li>
+					<li>
+						<img src="images/img_index_event_02.jpg" alt="테이블 위에 놓여진 화장품들" />
+						<p class="title">Picker Holidays</p>
+						<p class="desc">12월은 매일 매일 크리스마스<br>2021.12.01~2021.12.31</p>
+					</li>			
+					<li>
+						<img src="images/img_index_event_04.jpg" alt="find your beauty" />
+						<p class="title">김쿨톤 찾기</p>
+						<p class="desc">내가 바로 대한민국의 김쿨톤이다!<br>2021.11.20~2021.11.27</p>
+					</li>
+				</ul>
+			</div>
+			<div class="pagination">
+				<button class="pages active"><span><span class="blind">slide01</span></span></button><!--
+			 --><button class="pages"><span><span class="blind">slide02</span></span></button><!--
+			 --><button class="pages"><span><span class="blind">slide03</span></span></button><!--
+			 --><button class="pages"><span><span class="blind">slide04</span></span></button>
+			</div>
+		</div>
+
+
+	</section>
+
+	<footer>
+
+		<div class="inner_wrap clearfix">
+			<ul>
+				<li><a href="persnoal.html">개인정보처리방침</a></li>
+				<li><a href="persnoal.html">이용약관</a></li>
+				<li><a href="persnoal.html">사이트맵</a></li>
+				<li><a href="persnoal.html">고객센터</a></li>
+				<li><a href="persnoal.html">LANGUAGE</a></li>
+			</ul>
+			<div class="logo_wrap">
+				<img src="images/img_index_footer_logo.png" alt="picker logo"  />
+			</div><!--
+		  --><div class="info_wrap">
+				<p>7F, 73, dolma-ro, Bundang-gu, Seongnam-si, Gyeonggi-do, Republic of Korea</p>
+				<p>경기도 성남시 분당구 돌마로 73 (금곡동, 우방코아) 7층</p>
+				<p>사업자등록번호 : 122-31-74917</p>
+				<p>대표자 : 김성경</p>
+				<p class="copy">&copy;Copyright. <span>All rights reserved.</span></p>
+			</div><!--
+		  --><div class="sns_wrap">
+				<a href="facebook.html"><span class="blind">facebook</span></a>
+				<a href="instagram.html"><span class="blind">instagram</span></a>
+				<a href="kakaotalk.html"><span class="blind">kakaotalk</span></a>
+			</div>		
+		</div>
+
+	</footer>
+
+	<button class="btn_top">
+		<span>TOP</span>
+	</button>
+
+</body>
+
+</html>
