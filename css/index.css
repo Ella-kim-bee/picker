@@ -92,7 +92,7 @@
 	
 
 	/* === section.category === */
-	section.category { height: 56vh; margin-top: 50px; }
+	section.category { height: 56vh; max-height: 330px; margin-top: 50px; }
 	section.category div.inner_wrap { width: 90vw; }
 	
 	section.category ul.cate_wrap_M { float: left; width: 40%; height: 250px; }
@@ -133,7 +133,7 @@
 	section.bestseller div.inner_wrap_02 { width: 97.39583333%; }
 	section.bestseller div.view_mask { overflow: hidden; position: relative; width: 100%; margin: 0 auto; }
 	section.bestseller div.view_mask ul { width: 600%; }
-	section.bestseller div.view_mask li { float: left; position: relative; width: 16.66666%; height: 440px; padding: 0 10px; font-family: "NotoSansKR-Regular"; text-align: center; 
+	section.bestseller div.view_mask li { float: left; position: relative; width: 16.66666%; height: 62vh; min-height: 498px; padding: 0 10px; font-family: "NotoSansKR-Regular"; text-align: center; 
 	line-height: 1; }
 	section.bestseller div.view_mask li a { color: #222; }
 	section.bestseller div.view_mask li img { display: block; width: 100%; height: auto; margin-bottom: 1.5625em; border: 1px solid #ddd; }
@@ -191,7 +191,7 @@
 
 
 	/* === section.newbrand === */
-	section.newbrand { position: relative; margin-top: 50px; height: 80vh; min-height: 430px; }
+	section.newbrand { position: relative; margin-top: 50px; height: 80vh; min-height: 430px; max-height: 460px; }
 	section.newbrand h2 { margin-left: 5vw; }
 
 	section.newbrand div.title img { display: block; width: 150px; margin: 0 auto; object-fit: cover; }
