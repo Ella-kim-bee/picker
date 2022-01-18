@@ -20,7 +20,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 hr { border: none; }
 
-button { border: none; background: transparent; font-family: inherit; font-size: inherit; text-align: left; cursor: pointer; }
+button { border: none; background: transparent; color: #222;/*mobile대응*/ font-family: inherit; font-size: inherit; text-align: left; cursor: pointer; }
 button:active { outline: none; }
 button:focus { outline: none; }
 
