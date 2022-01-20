@@ -79,7 +79,7 @@ h2 { position: relative; padding: 0.2em 0; color: #222; font-weight: 500; font-s
 .pagination > button.pages { display: inline-block; margin: 0 15px; padding: 20px 0;  }
 .pagination > button.pages > span { display: block; position: relative; width: 11px; height: 11px; background: #d3bbbd; 
 border-radius: 50%; }
-.pagination > button.pages:hover > span { background: #803636; }
+.pagination > button.pages.active > span { background: #803636; }
 
 .dir_btns { display: inline-block; vertical-align: middle; }
 
@@ -118,20 +118,21 @@ width: 18px; height: 18px;  background: url("../images/img_common_btn_top.png") 
 @media screen and (max-width: 767px) {
 
 
-	.dir_btns { display: block; position: absolute; top: 0; z-index: 50; width: 20px; height: 100%; }
-	.dir_btns[class ~= "prev"] { left: 0; background: url("../images/img_common_btn_prev.png") no-repeat center 32%; background-size: 70%; }
-	.dir_btns[class ~= "next"] { right: 0; background: url("../images/img_common_btn_next.png") no-repeat center 32%; background-size: 70%; }
-	.dir_btns > span { position: relative; }
-	.dir_btns > span::after { content: ""; position: absolute; display: inline-block; width: 100px; height: 100px; border-radius: 50%;
-	background: rgba(128, 54, 54, 0.1);}
-	.dir_btns[class ~= "prev"] > span::after { transform: translateX(-59%) translateY(-122%); }
-	.dir_btns[class ~= "next"] > span::after { transform: translateX(-25%) translateY(-122%);  }
+	.dir_btns[class ~= "prev"] { display: block; position: absolute; top: 20%; left: -11px; z-index: 50; width: 55px; height: 110px; border-radius: 0 110px 110px 0;
+	background: rgba(128, 54, 54, 0.1); text-align: center; }
+	.dir_btns[class ~= "prev"]::after { content: ""; display: inline-block; width: 26px; height: 26px; 
+	background: url("../images/img_common_btn_prev.png") no-repeat center; background-size: cover; }
+	.dir_btns[class ~= "next"]{ display: block; position: absolute; top: 20%; right: -11px; z-index: 50; width: 55px; height: 110px; border-radius: 110px 0 0 110px;
+	background: rgba(128, 54, 54, 0.1); text-align: center; }
+	.dir_btns[class ~= "next"]::after { content: ""; display: inline-block; width: 26px; height: 26px; 
+	background: url("../images/img_common_btn_next.png") no-repeat center; background-size: cover; }
 
 	.like { display: inline-block; width: 24px; height: 24px; background: url("../images/img_common_like_off.png") no-repeat; background-size: contain; }
 	.like[class ~= "active"] { display: inline-block; width: 24px; height: 24px; background: url("../images/img_common_like_on.png") no-repeat; background-size: contain; }
 
 	.btn_top { padding: 1em 0.8em 0.5em 0.8em; }
 	.btn_top > span { font-size: 0.625em; }
+	.btn_top > span::after { left: 0.1em; }
 
 	h2 { font-size: 1.25em; }
 
@@ -207,15 +208,14 @@ width: 18px; height: 18px;  background: url("../images/img_common_btn_top.png") 
 /* ===== tablet(start) ===== */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 
-	
-	.dir_btns { display: block; position: absolute; top: 0; z-index: 50; width: 20px; height: 100%; }
-	.dir_btns[class ~= "prev"] { left: 0; background: url("../images/img_common_btn_prev.png") no-repeat center 30%; background-size: 70%; }
-	.dir_btns[class ~= "next"] { right: 0; background: url("../images/img_common_btn_next.png") no-repeat center 30%; background-size: 70%; }
-	.dir_btns > span { position: relative; }
-	.dir_btns > span::after { content: ""; position: absolute; display: inline-block; width: 116px; height: 116px; border-radius: 50%;
-	background: rgba(128, 54, 54, 0.1);}
-	.dir_btns[class ~= "prev"] > span::after { transform: translateX(-59%) translateY(-115%); }
-	.dir_btns[class ~= "next"] > span::after { transform: translateX(-25%) translateY(-115%);  }
+	.dir_btns[class ~= "prev"] { display: block; position: absolute; top: 20%; left: -11px; z-index: 50; width: 55px; height: 110px; border-radius: 0 110px 110px 0;
+	background: rgba(128, 54, 54, 0.1); text-align: center; }
+	.dir_btns[class ~= "prev"]::after { content: ""; display: inline-block; width: 26px; height: 26px; 
+	background: url("../images/img_common_btn_prev.png") no-repeat center; background-size: cover; }
+	.dir_btns[class ~= "next"]{ display: block; position: absolute; top: 20%; right: -11px; z-index: 50; width: 55px; height: 110px; border-radius: 110px 0 0 110px;
+	background: rgba(128, 54, 54, 0.1); text-align: center; }
+	.dir_btns[class ~= "next"]::after { content: ""; display: inline-block; width: 26px; height: 26px; 
+	background: url("../images/img_common_btn_next.png") no-repeat center; background-size: cover; }
 
 	.like { display: inline-block; width: 24px; height: 24px; background: url("../images/img_common_like_off.png") no-repeat; background-size: contain; }
 	.like[class ~= "active"] { display: inline-block; width: 24px; height: 24px; background: url("../images/img_common_like_on.png") no-repeat; background-size: contain; }

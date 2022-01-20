@@ -47,7 +47,7 @@
 	section.weekly div.btn_tootips button:nth-of-type(2) { top: 23.5%; left: 17%; }
 	section.weekly div.btn_tootips button:nth-of-type(3) { top: 40.5%; left: 12.5%; }
 	section.weekly div.btn_tootips button:nth-last-of-type(1) { top: 56.5%; left: 24%; }
-	section.weekly div.btn_tootips button { animation-name: tooltip; animation-duration: 0.8s; animation-iteration-count: infinite; animation-direction: alternate-reverse; }
+	section.weekly div.btn_tootips button { animation-name: tooltip; animation-duration: 0.6s; animation-iteration-count: infinite; animation-direction: alternate-reverse; }
 
 	@keyframes tooltip {
 		from{
@@ -58,7 +58,7 @@
 		}	
 	}
 	
-	section.weekly.on > div.tooltip_wrap { transform: translateX(-10.5%) translateY(-50%); transition: transform 0.3s; }
+	section.weekly.on > div.tooltip_wrap { transform: translateX(-28%) translateY(-50%); transition: transform 0.3s; }
 	section.weekly.on::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%;  
 	background: rgba(0, 0, 0, 0.8); z-index: 19;}
 
@@ -75,16 +75,14 @@
 	section.weekly div.tt_info_wrap p.desc { height: 3.375em; margin-bottom: 1em; font-size: 1.125em; line-height: 1.5em; }
 	section.weekly div.tt_info_wrap a.btn_common { font-size: 0.75em; }
 
-	section.weekly div.info_wrap { position: relative; width: 100%; height: 43.661971831vh;
-	background: linear-gradient(to right, #fff 0%, #fff 69%, #803636 69%, #803636 100%); }
-	section.weekly div.info_wrap::after { content: ""; display: inline-block; position: absolute; left: 0; bottom: 0;
+	section.weekly div.info_wrap { position: relative; width: 100%; height: 31vh; 
+	background: #803636; }
+	section.weekly div.info_wrap::after { content: ""; display: inline-block; position: absolute; right: 0; bottom: 0;
 	width: 320px; height: 97px; background: url("../images/img_index_weekly_opa_suji.png") no-repeat; 
-	background-size: 100%; opacity: 0.3; z-index: 1;}
-	section.weekly div.info_wrap h2 { padding-top: 30px; margin: 0 0 0 5vw; }
-	section.weekly div.info_wrap p.title { margin-left: 5vw; font-family: "NotoSansKR-Regular"; font-weight: bold; 
-	font-size: 3.75em;  }
-	section.weekly div.info_wrap img { display: inline-block; position: absolute; top: 50%; left: 70%; height: 20vh; 
-	transform: translateX(-50%) translateY(-50%); z-index: 5;}
+	background-size: 100%; opacity: 0.1; z-index: 1;}
+	section.weekly div.info_wrap h2 { padding-top: 30px; margin: 0 0 0 5vw; color: #f7f7f7; }
+	section.weekly div.info_wrap p.title { margin-left: 5vw; color: #f7f7f7; font-family: "NotoSansKR-Regular"; font-weight: bold; font-size: 3.75em;  }
+	section.weekly div.info_wrap img { display: none;}
 	section.weekly div.info_wrap p.desc { display: none;}
 
 	section.weekly div.inner_wrap_half { position: relative; width: 100%; height: 100%; }
@@ -92,7 +90,7 @@
 	
 
 	/* === section.category === */
-	section.category { height: 56vh; max-height: 330px; margin-top: 50px; }
+	section.category { height: 74vh; max-height: 330px; margin-top: 50px; }
 	section.category div.inner_wrap { width: 90vw; }
 	
 	section.category ul.cate_wrap_M { float: left; width: 40%; height: 250px; }
@@ -101,6 +99,7 @@
 	section.category ul.cate_wrap_M > li:nth-child(2) { border-bottom: none; }
 	section.category ul.cate_wrap_M > li button { display: block; width: 100%; height: 100%; font-size: 0.75em; line-height: 1.5; text-align: center;/*title style*/ }
 	section.category ul.cate_wrap_M > li > button::before { content: ""; display: block; width: 48px; height: 48px; margin: 0 auto; }
+	section.category ul.cate_wrap_M > li.active { background: #f7f7f7; }
 	section.category ul.cate_wrap_M > li:nth-child(1) > button::before { background: url("../images/img_index_category_lip.png") no-repeat; background-size: cover; }
 	section.category ul.cate_wrap_M > li:nth-child(2) > button::before { background: url("../images/img_index_category_face.png") no-repeat; background-size: cover; }
 	section.category ul.cate_wrap_M > li:nth-child(3) > button::before { background: url("../images/img_index_category_eye.png") no-repeat; background-size: cover; }
@@ -133,7 +132,7 @@
 	section.bestseller div.inner_wrap_02 { width: 97.39583333%; }
 	section.bestseller div.view_mask { overflow: hidden; position: relative; width: 100%; margin: 0 auto; }
 	section.bestseller div.view_mask ul { width: 600%; }
-	section.bestseller div.view_mask li { float: left; position: relative; width: 16.66666%; height: 62vh; min-height: 498px; padding: 0 10px; font-family: "NotoSansKR-Regular"; text-align: center; 
+	section.bestseller div.view_mask li { float: left; position: relative; width: 16.66666%; height: 134.333333vw; min-height: 440px; padding: 0 10px; font-family: "NotoSansKR-Regular"; text-align: center; 
 	line-height: 1; }
 	section.bestseller div.view_mask li a { color: #222; }
 	section.bestseller div.view_mask li img { display: block; width: 100%; height: auto; margin-bottom: 1.5625em; border: 1px solid #ddd; }
@@ -162,7 +161,8 @@
 
 	section.toprank div.view_mask { margin: 30px auto 0 auto; width: 94.7916666vw; }
 	section.toprank ul.lists_wrap { height: 360px; }
-	section.toprank ul.lists_wrap > li { overflow: hidden; position: absolute; width: 100%; height: 100%; }
+	section.toprank ul.lists_wrap > li { overflow: hidden; display: none; position: absolute; width: 100%; height: 100%; }
+	section.toprank ul.lists_wrap > li.active { display: block; }
 
 	section.toprank ul.product_wrap { width: 100%; height: 100%; }
 	section.toprank ul.product_wrap > li:nth-child(1) { width: 100%; height: 120px; border: 5px solid #fff5c8;}
@@ -170,7 +170,7 @@
 	section.toprank ul.product_wrap > li:nth-child(3) { width: 100%; height: 120px; border: 5px solid #e9d7cc;}
 	section.toprank ul.product_wrap > li > a { display: block; position: relative; width: 100%; height: 100%; }
 	section.toprank ul.product_wrap > li > a::after { content: ""; display: inline-block; position: absolute;
-	top: -6px; left: 20px; width: 40px; height: 64px;}
+	top: -6px; left: 20px; width: 36px; height: 57.6px;}
 	section.toprank ul.product_wrap > li:nth-child(1) > a::after { background: url("../images/img_index_toprant_01.png") no-repeat; background-size: contain; }
 	section.toprank ul.product_wrap > li:nth-child(2) > a::after { background: url("../images/img_index_toprant_02.png") no-repeat; background-size: contain; }
 	section.toprank ul.product_wrap > li:nth-child(3) > a::after { background: url("../images/img_index_toprant_03.png") no-repeat; background-size: contain; }
@@ -179,15 +179,6 @@
 	section.toprank ul.product_wrap p.title { margin-bottom: 0.5em; font-size: 1em; line-height: 1; }
 	section.toprank ul.product_wrap p.price { display: none; }
 	section.toprank ul.product_wrap img { float: right; display: block; width: 30%; height: 100%; object-fit: contain; }
-
-	/*
-	section.toprank ul.product_wrap a.top_01 div.info { float: left; width: 50%; margin-top: 150px; font-family: "NotoSansKR-Regular"; text-align: center; }
-	section.toprank ul.product_wrap a.top_01 p.brand { margin-bottom: 0.3125em; font-size: 1em; }
-	section.toprank ul.product_wrap a.top_01 p.title { margin-bottom: 0.5em; font-size: 1.125em; line-height: 1; padding: 0 0.777777em; }
-	section.toprank ul.product_wrap a.top_01 p.price { display: block; margin-bottom: 0.5em; font-size: 1.25em; }
-	section.toprank ul.product_wrap a.top_01 p.color span.color::before { content: ""; display: inline-block; width: 15px; height: 15px; margin: 0 5px; border-radius: 50%; vertical-align: top; }
-	section.toprank ul.product_wrap a.top_01 img { float: right; width: 50%; height: 100%; object-fit: contain; vertical-align: middle; }
-	*/
 
 
 	/* === section.newbrand === */
@@ -202,8 +193,9 @@
 
 	section.newbrand div.info_wrap { width: 100%; height: 200px; background: #111; }
 	section.newbrand div.info_wrap > div.inner_wrap { width: 100%; height: 100%; }
-	section.newbrand div.info_wrap ul { width: 300%; height: 100%; margin: 0 auto; text-align: center; }
-	section.newbrand div.info_wrap ul > li { float: left; width: 33.333333%; height: 100%; transform: translateY(-36%); }
+	section.newbrand div.info_wrap ul { position: relative; width: 100%; height: 100%; margin: 0 auto; text-align: center; }
+	section.newbrand div.info_wrap ul > li { display: none; position: absolute; width: 100%; height: 100%; transform: translateY(-36%); }
+	section.newbrand div.info_wrap ul > li:nth-child(1) { display: block; }
 	section.newbrand div.info_wrap ul > li > img { display: inline-block; width: 140px; height: 140px; margin-bottom: 20px; border-radius: 50%; }
 	section.newbrand div.info_wrap ul > li > p.desc { color: #fff; font-family: "NotoSansKR-Regular"; font-size: 0.75em; } 
 
@@ -223,6 +215,7 @@
 	section.event div.view_mask li > p.desc { font-size: 0.9375em; font-family: "NotoSansKR-Regular"; line-height: 1.5;}
 
 	section.event div.pagination { display: block; }
+	section.event div.pagination button.active > span { background: #803636; }
 
 
 
@@ -272,7 +265,7 @@
 
 
 	/* === section.weekly === */
-	section.weekly { position: relative; height: 100vh; min-height: 660px; }
+	section.weekly { position: relative; height: 1000px; min-height: 660px; }
 
 	section.weekly div.img_wrap { overflow: hidden; float: right; position: relative; width: 50%; height: auto; z-index: 16; }
 	section.weekly div.img_wrap img { display: block; width: 50vw; }
@@ -281,7 +274,7 @@
 	section.weekly div.btn_tootips button:nth-of-type(2) { top: 22.5%; left: 7%; }
 	section.weekly div.btn_tootips button:nth-of-type(3) { top: 33.5%; left: 0.5%; }
 	section.weekly div.btn_tootips button:nth-last-of-type(1) { top: 45.5%; left: 20%; }
-	section.weekly div.btn_tootips button { animation-name: tooltip; animation-duration: 0.8s; animation-iteration-count: infinite; animation-direction: alternate-reverse; }
+	section.weekly div.btn_tootips button { animation-name: tooltip; animation-duration: 0.6s; animation-iteration-count: infinite; animation-direction: alternate-reverse; }
 
 	@keyframes tooltip {
 		from{
@@ -358,7 +351,7 @@
 	section.bestseller div.inner_wrap_02 { width: 97.39583333%; }
 	section.bestseller div.view_mask { overflow: hidden; position: relative; width: 100%; margin: 0 auto; }
 	section.bestseller div.view_mask ul { width: 200%; }
-	section.bestseller div.view_mask li { float: left; position: relative; width: 16.66666%; height: 420px; padding: 0 10px; font-family: "NotoSansKR-Regular"; text-align: center; 
+	section.bestseller div.view_mask li { float: left; position: relative; width: 16.66666%; height: 50vw; min-height: 420px; padding: 0 10px; font-family: "NotoSansKR-Regular"; text-align: center; 
 	line-height: 1; }
 	section.bestseller div.view_mask li a { color: #222; }
 	section.bestseller div.view_mask li img { display: block; width: 100%; height: auto; margin-bottom: 1.5625em; border: 1px solid #ddd; }
@@ -387,7 +380,8 @@
 
 	section.toprank div.view_mask { margin: 30px auto 0 auto; width: 94.7916666vw; }
 	section.toprank ul.lists_wrap { height: 340px; }
-	section.toprank ul.lists_wrap > li { overflow: hidden; position: absolute; width: 100%; height: 100%; }
+	section.toprank ul.lists_wrap > li { overflow: hidden; display: none; position: absolute; width: 100%; height: 100%; }
+	section.toprank ul.lists_wrap > li.active { display: block; }
 
 	section.toprank ul.product_wrap { width: 100%; height: 100%; }
 	section.toprank ul.product_wrap > li:nth-child(1) { float: left; width: 50%; height: 100%; border: 5px solid #fff5c8;}
@@ -402,30 +396,32 @@
 	section.toprank ul.product_wrap > li:nth-child(3) > a::after { top: -6px; left: 76px; width: 60px; height: 96px; 
 	background: url("../images/img_index_toprant_03.png") no-repeat; background-size: contain; }
 	section.toprank ul.product_wrap div.info { float: left; width: 60%; margin-top: 95px; font-family: "NotoSansKR-Regular"; text-align: center; }
-	section.toprank ul.product_wrap p.brand { margin-bottom: 0.3125em; font-size: 1em; }
+	section.toprank ul.product_wrap p.brand { margin-bottom: 0.3125em; font-size: 0.875em; }
 	section.toprank ul.product_wrap p.title { margin-bottom: 0.5em; font-size: 1.125em; line-height: 1; }
 	section.toprank ul.product_wrap p.price { display: none; }
 	section.toprank ul.product_wrap img { float: right; display: block; width: 40%; height: 100%; object-fit: contain; }
 
 	section.toprank ul.product_wrap a.top_01 div.info { float: left; width: 50%; margin-top: 150px; font-family: "NotoSansKR-Regular"; text-align: center; }
-	section.toprank ul.product_wrap a.top_01 p.brand { margin-bottom: 0.3125em; font-size: 1em; }
+	section.toprank ul.product_wrap a.top_01 p.brand { margin-bottom: 0.3125em; font-size: 0.875em; }
 	section.toprank ul.product_wrap a.top_01 p.title { margin-bottom: 0.5em; font-size: 1.125em; line-height: 1; padding: 0 0.777777em; }
 	section.toprank ul.product_wrap a.top_01 p.price { display: block; margin-bottom: 0.5em; font-size: 1.25em; }
 	section.toprank ul.product_wrap a.top_01 p.color span.color::before { content: ""; display: inline-block; width: 15px; height: 15px; margin: 0 5px; border-radius: 50%; vertical-align: top; }
 	section.toprank ul.product_wrap a.top_01 img { float: right; width: 50%; height: 100%; object-fit: contain; vertical-align: middle; }
 
 	/* === section.newbrand === */
-	section.newbrand { position: relative; margin-top: 100px; height: 80vh; min-height: 820px; }
+	section.newbrand { position: relative; margin-top: 100px; height: 60vh; min-height: 650px; }
 	section.newbrand h2 { margin-left: 20px; }
+	section.newbrand div.inner_wrap { height: 50%; }
 
-	section.newbrand div.title img { display: block; width: 300px; margin: 0 auto; object-fit: cover; }
-	section.newbrand div.title p.desc { margin: 20px 0 230px 0; font-family: "NotoSansKR-Regular"; font-size: 1.5em; text-align: center; }
+	section.newbrand div.title img { position: absolute; top: 15%; left: 50%; transform: translateX(-50%) translateY(-50%); 
+	display: block; width: 300px; margin: 0 auto; object-fit: cover; }
+	section.newbrand div.title p.desc { position: absolute; top: 30%; left: 50%; width: 100%; transform: translateX(-50%) translateY(-50%); font-family: "NotoSansKR-Regular"; font-size: 1.5em; text-align: center; }
 	section.newbrand div.title p.desc > span::before { content: "["; margin-right: 0.6em; color: #d0d0d0; font-size: 2.0833333em; vertical-align: middle; }
 	section.newbrand div.title p.desc > span::after { content: "]"; margin-left: 0.6em; color: #d0d0d0; font-size: 2.0833333em; vertical-align: middle; }
 	section.newbrand div.title p.desc > span > span { color: #803636; }
 
 	section.newbrand div.info_wrap { width: 100%; height: 350px; background: #111; }
-	section.newbrand div.info_wrap > div.inner_wrap { width: 100%; height: 100%; }
+	section.newbrand div.info_wrap > div.inner_wrap { height: 100%; }
 	section.newbrand div.info_wrap ul { width: 600px; height: 100%; margin: 0 auto; text-align: center; }
 	section.newbrand div.info_wrap ul > li { float: left; width: 33.333333%; height: 100%; transform: translateY(-22%); }
 	section.newbrand div.info_wrap ul > li > img { display: inline-block; width: 140px; height: 140px; margin-bottom: 50px; border-radius: 50%; }
@@ -518,7 +514,7 @@
 	section.weekly div.btn_tootips button:nth-of-type(2) { top: 268px; left: 157px; }
 	section.weekly div.btn_tootips button:nth-of-type(3) { top: 390px; left: 127px; }
 	section.weekly div.btn_tootips button:nth-last-of-type(1) { top: 550px; left: 218px; }
-	section.weekly div.btn_tootips button { animation-name: tooltip; animation-duration: 0.8s; animation-iteration-count: infinite; animation-direction: alternate-reverse; }
+	section.weekly div.btn_tootips button { animation-name: tooltip; animation-duration: 0.6s; animation-iteration-count: infinite; animation-direction: alternate-reverse; }
 
 	@keyframes tooltip {
 		from{
@@ -628,8 +624,9 @@
 
 	section.toprank div.view_mask { margin-top: 30px;  }
 	section.toprank ul.lists_wrap { height: 44.79166666vh; min-height: 410px;  }
-	section.toprank ul.lists_wrap > li { overflow: hidden; position: absolute; width: 100%; height: 100%; }
-
+	section.toprank ul.lists_wrap > li { overflow: hidden; display: none; position: absolute; width: 100%; height: 100%; }
+	section.toprank ul.lists_wrap > li.active { display: block; }
+	
 	section.toprank ul.product_wrap { width: 100%; height: 100%; }
 	section.toprank ul.product_wrap > li:nth-child(1) { float: left; width: 50%; height: 100%; border: 5px solid #fff5c8;}
 	section.toprank ul.product_wrap > li:nth-child(2) { float: right; width: 50%; height: 50%; border: 5px solid #e2e2e2;}
@@ -643,13 +640,13 @@
 	section.toprank ul.product_wrap > li:nth-child(3) > a::after { top: -6px; left: 106px; width: 12.367491%; height: 52.093%; 
 	background: url("../images/img_index_toprant_03.png") no-repeat; background-size: contain; }
 	section.toprank ul.product_wrap div.info { float: left; width: 50%; margin-top: 12.3vh; font-family: "NotoSansKR-Regular"; text-align: center; }
-	section.toprank ul.product_wrap p.brand { margin-bottom: 0.3125em; font-size: 1em; }
+	section.toprank ul.product_wrap p.brand { margin-bottom: 0.3125em; font-size: 0.875em; }
 	section.toprank ul.product_wrap p.title { margin-bottom: 0.5555555em; font-size: 1.125em; line-height: 1; }
 	section.toprank ul.product_wrap p.price { margin-bottom: 0.3125em; font-size: 1em; }
 	section.toprank ul.product_wrap img { float: right; display: block; width: 50%; height: 100%; object-fit: contain; }
 
 	section.toprank ul.product_wrap a.top_01 div.info { float: left; width: 50%; margin-top: 24.04166666vh; font-family: "NotoSansKR-Regular"; text-align: center; }
-	section.toprank ul.product_wrap a.top_01 p.brand { margin-bottom: 0.2777777em; font-size: 1.125em; }
+	section.toprank ul.product_wrap a.top_01 p.brand { margin-bottom: 0.2777777em; font-size: 1em; }
 	section.toprank ul.product_wrap a.top_01 p.title { margin-bottom: 0.4545454545em; font-size: 1.375em; line-height: 1; }
 	section.toprank ul.product_wrap a.top_01 p.price { margin-bottom: 0.2777777em; font-size: 1.125em; }
 	section.toprank ul.product_wrap a.top_01 p.color span.color::before { content: ""; display: inline-block; width: 15px; height: 15px; margin: 0 5px; border-radius: 50%; vertical-align: top; }
