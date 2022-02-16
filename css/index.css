@@ -36,18 +36,18 @@
 
 
 	/* === section.weekly === */
-	section.weekly { position: relative; min-height: 568px; }
+	section.weekly { position: relative; min-height: 496px; }
 
 	section.weekly div.img_wrap { overflow: hidden; position: relative; width: 100%; height: auto; z-index: 16; }
 	section.weekly div.img_wrap img { display: block; width: 100vw; }
 	
-	section.weekly div.btn_tootips button { width: 16px; height: 16px; }
-	section.weekly div.btn_tootips button::after { font-size: 0.875em; line-height: 1.3; vertical-align: top; }
-	section.weekly div.btn_tootips button:nth-of-type(1) { top: 24%; left: 43%; }
-	section.weekly div.btn_tootips button:nth-of-type(2) { top: 23.5%; left: 17%; }
-	section.weekly div.btn_tootips button:nth-of-type(3) { top: 40.5%; left: 12.5%; }
-	section.weekly div.btn_tootips button:nth-last-of-type(1) { top: 56.5%; left: 24%; }
-	section.weekly div.btn_tootips button { animation-name: tooltip; animation-duration: 0.6s; animation-iteration-count: infinite; animation-direction: alternate-reverse; }
+	section.weekly div.btn_tooltips button { width: 16px; height: 16px; }
+	section.weekly div.btn_tooltips button::after { font-size: 0.875em; line-height: 1.3; vertical-align: top; }
+	section.weekly div.btn_tooltips button:nth-of-type(1) { top: 24%; left: 43%; }
+	section.weekly div.btn_tooltips button:nth-of-type(2) { top: 23.5%; left: 17%; }
+	section.weekly div.btn_tooltips button:nth-of-type(3) { top: 40.5%; left: 12.5%; }
+	section.weekly div.btn_tooltips button:nth-last-of-type(1) { top: 56.5%; left: 24%; }
+	section.weekly div.btn_tooltips button { animation-name: tooltip; animation-duration: 0.6s; animation-iteration-count: infinite; animation-direction: alternate-reverse; }
 
 	@keyframes tooltip {
 		from{
@@ -58,9 +58,9 @@
 		}	
 	}
 	
-	section.weekly.on > div.tooltip_wrap { transform: translateX(-28%) translateY(-50%); transition: transform 0.3s; }
-	section.weekly.on::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%;  
-	background: rgba(0, 0, 0, 0.8); z-index: 19;}
+	section.weekly.on > div.tooltip_wrap { position: fixed; left: 50%; top: 50%; width: 90vw; transform: translateX(-50%) translateY(-50%); transition: transform 0.3s; z-index: 111; }
+	section.weekly.on::before { content: ""; position: fixed; left: 0; top: 0; width: 100%; height: 100%;  
+	background: rgba(0, 0, 0, 0.8); z-index: 110;}
 
 	section.weekly div.tooltip_wrap { position: absolute; top: 50%; right: 0; width: 260px; background: #fff; border-radius: 10px; 
 	transform: translateX(100%) translateY(-50%); z-index: 20; }
@@ -107,7 +107,7 @@
 	section.category ul.cate_wrap { overflow: hidden; float: right; width: 60%; height: 250px; }
 	section.category ul.cate_wrap > li { display: table;  width: 100%; height: 25%; border: 1px solid #ddd; border-bottom: none; border-left: none; }
 	section.category ul.cate_wrap > li:nth-child(4n) { border-bottom: 1px solid #ddd; }
-	section.category ul.cate_wrap > li > a { display: block; position: relative; width: 100%; height: 100%; padding: 1em 2em; text-align: right; }
+	section.category ul.cate_wrap > li > a { display: block; position: relative; width: 100%; height: 100%; padding: 1em 1.2em; text-align: right; }
 	section.category ul.cate_wrap > li > a::before { content: ""; display: inline-block; position: absolute; left: 1em; top: 0.5em; width: 42px; height: 42px;  }
 	section.category ul.cate_wrap > li:nth-child(1) > a::before { background: url("../images/img_index_category_lipstick_c.png") no-repeat; background-size: cover; /*color ver img*/ }
 	section.category ul.cate_wrap > li:nth-child(2) > a::before { background: url("../images/img_index_category_liptint_c.png") no-repeat; background-size: cover; /*color ver img*/ }
@@ -136,7 +136,7 @@
 	line-height: 1; }
 	section.bestseller div.view_mask li a { color: #222; }
 	section.bestseller div.view_mask li img { display: block; width: 100%; height: auto; margin-bottom: 1.5625em; border: 1px solid #ddd; }
-	section.bestseller div.view_mask li span.like { position: absolute; top: 66%; right: 6%; }
+	section.bestseller div.view_mask li button.like { position: absolute; top: 66%; right: 6%; }
 	section.bestseller div.view_mask li p.brand { margin-bottom: 0.625em; }
 	section.bestseller div.view_mask li p.title { margin-bottom: 0.555555555em; font-size: 1.125em; }
 	section.bestseller div.view_mask li p.price { margin-bottom: 0.625em; font-weight: bold; }
@@ -163,6 +163,17 @@
 	section.toprank ul.lists_wrap { height: 360px; }
 	section.toprank ul.lists_wrap > li { overflow: hidden; display: none; position: absolute; width: 100%; height: 100%; }
 	section.toprank ul.lists_wrap > li.active { display: block; }
+	section.toprank ul.lists_wrap > li.active div.info { animation-name: fadeIn; animation-duration: 0.5s; animation-iteration-count: 1; }
+	section.toprank ul.lists_wrap > li.active img { animation-name: fadeIn; animation-duration: 0.5s; animation-iteration-count: 1; }
+
+	@keyframes fadeIn {
+		from{
+			opacity: 0;		
+		}
+		to{
+			opacity: 1;
+		}	
+	}
 
 	section.toprank ul.product_wrap { width: 100%; height: 100%; }
 	section.toprank ul.product_wrap > li:nth-child(1) { width: 100%; height: 120px; border: 5px solid #fff5c8;}
@@ -205,12 +216,12 @@
 	section.event h2 + .btn_common { position: absolute; right: 0; top: 8px; margin-right: 5vw; }
 	section.event h2 { margin-left: 5vw; }
 
-	section.event div.inner_wrap_02 { width: 96.875%; }
+	section.event div.inner_wrap_02 { width: 100%; }
 
 	section.event div.view_mask { overflow: hidden; position: relative; width: 100%; }
 	section.event div.view_mask ul { width: 400%; }
-	section.event div.view_mask li { float: left; position: relative; width: 25%; padding: 0 12px; text-align: center; }
-	section.event div.view_mask li > img { display: block; width: 100%; height: auto; }
+	section.event div.view_mask li { float: left; position: relative; width: 25%; text-align: center; }
+	section.event div.view_mask li img { display: block; width: 100%; height: auto; }
 	section.event div.view_mask li > p.title { margin: 0.5em 0; font-size: 1.25em; font-weight: bold; font-family: "NotoSansKR-Regular";  }
 	section.event div.view_mask li > p.desc { font-size: 0.9375em; font-family: "NotoSansKR-Regular"; line-height: 1.5;}
 
@@ -270,11 +281,11 @@
 	section.weekly div.img_wrap { overflow: hidden; float: right; position: relative; width: 50%; height: auto; z-index: 16; }
 	section.weekly div.img_wrap img { display: block; width: 50vw; }
 	
-	section.weekly div.btn_tootips button:nth-of-type(1) { top: 23%; left: 60%; }
-	section.weekly div.btn_tootips button:nth-of-type(2) { top: 22.5%; left: 7%; }
-	section.weekly div.btn_tootips button:nth-of-type(3) { top: 33.5%; left: 0.5%; }
-	section.weekly div.btn_tootips button:nth-last-of-type(1) { top: 45.5%; left: 20%; }
-	section.weekly div.btn_tootips button { animation-name: tooltip; animation-duration: 0.6s; animation-iteration-count: infinite; animation-direction: alternate-reverse; }
+	section.weekly div.btn_tooltips button:nth-of-type(1) { top: 23%; left: 60%; }
+	section.weekly div.btn_tooltips button:nth-of-type(2) { top: 22.5%; left: 7%; }
+	section.weekly div.btn_tooltips button:nth-of-type(3) { top: 33.5%; left: 0.5%; }
+	section.weekly div.btn_tooltips button:nth-last-of-type(1) { top: 45.5%; left: 20%; }
+	section.weekly div.btn_tooltips button { animation-name: tooltip; animation-duration: 0.6s; animation-iteration-count: infinite; animation-direction: alternate-reverse; }
 
 	@keyframes tooltip {
 		from{
@@ -355,7 +366,7 @@
 	line-height: 1; }
 	section.bestseller div.view_mask li a { color: #222; }
 	section.bestseller div.view_mask li img { display: block; width: 100%; height: auto; margin-bottom: 1.5625em; border: 1px solid #ddd; }
-	section.bestseller div.view_mask li span.like { position: absolute; top: 53%; right: 8%; }
+	section.bestseller div.view_mask li button.like { position: absolute; top: 53%; right: 8%; }
 	section.bestseller div.view_mask li p.brand { margin-bottom: 0.625em; }
 	section.bestseller div.view_mask li p.title { margin-bottom: 0.555555555em; font-size: 1.125em; }
 	section.bestseller div.view_mask li p.price { margin-bottom: 0.625em; font-weight: bold; }
@@ -382,6 +393,17 @@
 	section.toprank ul.lists_wrap { height: 340px; }
 	section.toprank ul.lists_wrap > li { overflow: hidden; display: none; position: absolute; width: 100%; height: 100%; }
 	section.toprank ul.lists_wrap > li.active { display: block; }
+	section.toprank ul.lists_wrap > li.active div.info { animation-name: fadeIn; animation-duration: 0.5s; animation-iteration-count: 1; }
+	section.toprank ul.lists_wrap > li.active img { animation-name: fadeIn; animation-duration: 0.5s; animation-iteration-count: 1; }
+
+	@keyframes fadeIn {
+		from{
+			opacity: 0;		
+		}
+		to{
+			opacity: 1;
+		}	
+	}
 
 	section.toprank ul.product_wrap { width: 100%; height: 100%; }
 	section.toprank ul.product_wrap > li:nth-child(1) { float: left; width: 50%; height: 100%; border: 5px solid #fff5c8;}
@@ -452,7 +474,7 @@
 	section.event div.view_mask { overflow: hidden; position: relative; width: 100%; }
 	section.event div.view_mask ul { width: 100%; }
 	section.event div.view_mask li { float: left; position: relative; width: 50%; padding: 0 12px 24px 12px; text-align: center; }
-	section.event div.view_mask li > img { display: block; width: 100%; height: auto; }
+	section.event div.view_mask li img { display: block; width: 100%; height: auto; }
 	section.event div.view_mask li > p.title { margin: 0.5em 0; font-size: 1.25em; font-weight: bold; font-family: "NotoSansKR-Regular";  }
 	section.event div.view_mask li > p.desc { font-size: 0.9375em; font-family: "NotoSansKR-Regular"; line-height: 1.5;}
 
@@ -510,11 +532,11 @@
 	section.weekly div.img_wrap { overflow: hidden; float: right; position: relative; width: 50%; height: auto; z-index: 16; }
 	section.weekly div.img_wrap img { display: block; width: 960px; height: auto; }
 
-	section.weekly div.btn_tootips button:nth-of-type(1) { top: 262px; left: 410px; }
-	section.weekly div.btn_tootips button:nth-of-type(2) { top: 268px; left: 157px; }
-	section.weekly div.btn_tootips button:nth-of-type(3) { top: 390px; left: 127px; }
-	section.weekly div.btn_tootips button:nth-last-of-type(1) { top: 550px; left: 218px; }
-	section.weekly div.btn_tootips button { animation-name: tooltip; animation-duration: 0.6s; animation-iteration-count: infinite; animation-direction: alternate-reverse; }
+	section.weekly div.btn_tooltips button:nth-of-type(1) { top: 262px; left: 410px; }
+	section.weekly div.btn_tooltips button:nth-of-type(2) { top: 268px; left: 157px; }
+	section.weekly div.btn_tooltips button:nth-of-type(3) { top: 390px; left: 127px; }
+	section.weekly div.btn_tooltips button:nth-last-of-type(1) { top: 550px; left: 218px; }
+	section.weekly div.btn_tooltips button { animation-name: tooltip; animation-duration: 0.6s; animation-iteration-count: infinite; animation-direction: alternate-reverse; }
 
 	@keyframes tooltip {
 		from{
@@ -602,7 +624,7 @@
 	line-height: 1; }
 	section.bestseller div.view_mask li a { color: #222; }
 	section.bestseller div.view_mask li img { display: block; width: 100%; height: auto; margin-bottom: 1.5625em; border: 1px solid #ddd; }
-	section.bestseller div.view_mask li span.like { position: absolute; top: 63%; right: 7%; }
+	section.bestseller div.view_mask li button.like { position: absolute; top: 63%; right: 7%; }
 	section.bestseller div.view_mask li p.brand { margin-bottom: 0.625em; }
 	section.bestseller div.view_mask li p.title { margin-bottom: 0.555555555em; font-size: 1.125em; }
 	section.bestseller div.view_mask li p.price { margin-bottom: 0.625em; font-weight: bold; }
@@ -615,7 +637,7 @@
 
 	section.toprank div.tabs_wrap { width: 100%; border-bottom: 1px solid #ddd; z-index: 1;  }
 	section.toprank div.tabs_wrap ul { position: relative; width: 1132px; margin: 0 auto; }
-	section.toprank div.tabs_wrap li { float: left;  padding: 0.625em; margin-right: 6.2px;  }
+	section.toprank div.tabs_wrap li { float: left; padding: 0.625em; margin-right: 6.2px;  }
 	section.toprank div.tabs_wrap li.active > button { color: #803636; font-weight: bold; }
 	section.toprank div.tabs_wrap li > button { display: block; width: 100%; font-size: 1.125em;  text-align: center; }
 	section.toprank div.tabs_wrap li:nth-last-child(1) { position: absolute; left: 0; bottom: -2px; width: 76.92px; height: 4px; padding: 0;margin: 0;
@@ -626,7 +648,18 @@
 	section.toprank ul.lists_wrap { height: 44.79166666vh; min-height: 410px;  }
 	section.toprank ul.lists_wrap > li { overflow: hidden; display: none; position: absolute; width: 100%; height: 100%; }
 	section.toprank ul.lists_wrap > li.active { display: block; }
-	
+	section.toprank ul.lists_wrap > li.active div.info { animation-name: fadeIn; animation-duration: 0.5s; animation-iteration-count: 1; }
+	section.toprank ul.lists_wrap > li.active img { animation-name: fadeIn; animation-duration: 0.5s; animation-iteration-count: 1; }
+
+	@keyframes fadeIn {
+		from{
+			opacity: 0;		
+		}
+		to{
+			opacity: 1;
+		}	
+	}
+
 	section.toprank ul.product_wrap { width: 100%; height: 100%; }
 	section.toprank ul.product_wrap > li:nth-child(1) { float: left; width: 50%; height: 100%; border: 5px solid #fff5c8;}
 	section.toprank ul.product_wrap > li:nth-child(2) { float: right; width: 50%; height: 50%; border: 5px solid #e2e2e2;}
@@ -679,7 +712,7 @@
 	section.event div.view_mask { overflow: hidden; position: relative; width: 100%; }
 	section.event div.view_mask ul { width: 100%; }
 	section.event div.view_mask li { float: left; position: relative; width: 25%; padding: 0 12px; text-align: center; }
-	section.event div.view_mask li > img { display: block; width: 100%; height: auto; }
+	section.event div.view_mask li  img { display: block; width: 100%; height: auto; }
 	section.event div.view_mask li > p.title { margin: 0.833333em 0; font-size: 1.125em; font-weight: bold; font-family: "NotoSansKR-Regular"; }
 	section.event div.view_mask li > p.desc { font-size: 0.875em; font-family: "NotoSansKR-Regular"; }
 

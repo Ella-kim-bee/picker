@@ -19,13 +19,13 @@
 	
 <body>
 
-	<header>
+	<header id="header">
 
 		<h1><a href="index.html"><span class="blind">Picker logo</span></a></h1>
-		<button class="btn_menu"><span class="blind">MENU</span></button>
+		<button class="btn_menu" id="btnToggle"><span class="blind">MENU</span></button>
 		<div class="add_wrap">
 			<a href="event.html">
-				<img src="images/img_index_header_gnb_banner_01.png" alt="2022 new year sale 50% off" />
+				<img src="images/img_index_header_gnb_banner_01.png" alt="add banner" />
 			</a>
 		</div>
 		<nav>
@@ -86,7 +86,7 @@
 				<source srcset="images/img_index_weekly_main_D.jpg" media="(min-width: 1025px)">
 				<img src="images/img_index_weekly_main_D.jpg" alt="수지 화보" />
 			</picture>
-			<div class="btn_tootips">
+			<div class="btn_tooltips">
 				<button><span class="blind">tooltip eyebrow</span></button>
 				<button><span class="blind">tooltip eyeshadow</span></button>
 				<button><span class="blind">tooltip face</span></button>
@@ -96,14 +96,14 @@
 		<div class="tooltip_wrap">
 			<div class="rel">
 				<div class="tt_img_wrap">
-					<img id="tt_img" src="images/img_index_weekly_tooltip_eyebrow.jpg" alt="shuuemura eyebrow" />
+					<img id="tt_img" src="" alt="" />
 				</div>
 				<div class="tt_info_wrap">
-					<p id="tt_title" class="title">shu uemura</p>
-					<p id="tt_desc" class="desc">하드 포뮬라 - 스톤 그레이</p>
-					<a id="tt_more" class="btn_common" href="eyebrow#shuuemura.html"><span>more</span></a>
+					<p id="tt_title" class="title"></p>
+					<p id="tt_desc" class="desc"></p>
+					<a id="tt_more" class="btn_common" href=""><span>more</span></a>
 				</div>
-				<button><span class="blind">닫기</span></button>
+				<button id="tt_close"><span class="blind">닫기</span></button>
 			</div>
 		</div>
 		<div class="info_wrap">
@@ -132,7 +132,7 @@
 				<li class="lip_lists">
 					<a href="lipstick.html"><span>lipstick</span></a>
 				</li class="lip_lists">
-				<li>
+				<li class="lip_lists">
 					<a href="liptint.html"><span>liptint</span></a>
 				</li>
 				<li class="lip_lists">
@@ -183,7 +183,7 @@
 						<a href="liptint#3ce_01.html">
 							<div>
 								<img src="images/img_index_best_01.jpg" alt="3CE liptint" />
-								<span class="like active"><span class="blind">찜하기</span></span>
+								
 							</div>
 							<p class="brand">3CE</p>
 							<p class="title">벨벳 립 틴트</p>
@@ -196,12 +196,12 @@
 								<span class="color _rose"><span class="blind">rose</span></span>
 							</p>
 						</a>
+						<button class="like"><span class="blind">찜하기</span></button>
 					</li>
 					<li>
 						<a href="lipgloss#dior_01.html">
 							<div>
 								<img src="images/img_index_best_02.jpg" alt="dior lipgloss" />
-								<span class="like"><span class="blind">찜하기</span></span>
 							</div>
 							<p class="brand">DIOR</p>
 							<p class="title">어딕트 립글로우</p>
@@ -209,15 +209,15 @@
 							<p class="color">
 								<span class="color _peach"><span class="blind">peach</span></span>
 								<span class="color _pink"><span class="blind">pink</span></span>
-								<span class="color _coral"><span class="blind">coral</span></span>								
+								<span class="color _coral"><span class="blind">coral</span></span>
 							</p>
 						</a>
+						<button class="like"><span class="blind">찜하기</span></button>
 					</li>
 					<li>
 						<a href="powder_pact#saintlaurent_01.html">
 							<div>
 								<img src="images/img_index_best_03.jpg" alt="SaintLaurent pact" />
-								<span class="like"><span class="blind">찜하기</span></span>
 							</div>
 							<p class="brand">SAINT LAURENT</p>
 							<p class="title">엉크르 드 뽀 올아워 마블</p>
@@ -225,40 +225,42 @@
 							<p class="color">
 								<span class="color _21"><span class="blind">21호</span></span>
 								<span class="color _23"><span class="blind">23호</span></span>
-								<span class="color _25"><span class="blind">25호</span></span>								
+								<span class="color _25"><span class="blind">25호</span></span>	
 							</p>
 						</a>
+						<button class="like"><span class="blind">찜하기</span></button>
 					</li>
 					<li>
 						<a href="eyeshadow#romand_01.html">
 							<div>
 								<img src="images/img_index_best_04.jpg" alt="romand eyeshadow" />
-								<span class="like"><span class="blind">찜하기</span></span>
 							</div>
 							<p class="brand">ROM&ND</p>
 							<p class="title">베러 댄 아이즈</p>
 							<p class="price">16,000원</p>							
 						</a>
+						<button class="like"><span class="blind">찜하기</span></button>
 					</li>
 					<li>
 						<a href="mascara#kissme_01.html">
 							<div>
 								<img src="images/img_index_best_05.jpg" alt="kissme mascara" />
-								<span class="like"><span class="blind">찜하기</span></span>
+								
 							</div>
 							<p class="brand">KISS ME</p>
 							<p class="title">히로인메이크 마스카라</p>
 							<p class="price">14,000원</p>
 							<p class="color">
-								<span class="color _brown"><span class="blind">brown</span></span>							
+								<span class="color _brown"><span class="blind">brown</span></span>
 							</p>
 						</a>
+						<button class="like"><span class="blind">찜하기</span></button>
 					</li>
 					<li>
 						<a href="foundation#dior_01.html">
 							<div class="rel">
 								<img src="images/img_index_best_06.jpg" alt="dior foundation" />
-								<span class="like"><span class="blind">찜하기</span></span>
+								
 							</div>
 							<p class="brand">DIOR</p>
 							<p class="title">포에버 스킨 글로우</p>
@@ -266,9 +268,10 @@
 							<p class="color">
 								<span class="color _21"><span class="blind">21호</span></span>
 								<span class="color _23"><span class="blind">23호</span></span>
-								<span class="color _25"><span class="blind">25호</span></span>							
+								<span class="color _25"><span class="blind">25호</span></span>	
 							</p>
 						</a>
+						<button class="like"><span class="blind">찜하기</span></button>
 					</li>					
 				</ul>				
 			</div>
@@ -297,7 +300,7 @@
 				<li><button>eyeliner</button></li>
 				<li><button>eyebrow</button></li>
 				<li><button>mascara</button></li>
-				<li><span class="blind">menu bar</span></li>
+				<li id="bar"><span class="blind">menu bar</span></li>
 			</ul>			
 		</div>
 		<div class="inner_wrap view_mask">
@@ -805,22 +808,22 @@
 			<div class="view_mask">
 				<ul class="clearfix">
 					<li>
-						<img src="images/img_index_event_01.jpg" alt="화장대위에 있는 화장품을 잡으려는 손" />
+						<a href="event_01.html"><img src="images/img_index_event_01.jpg" alt="화장대위에 있는 화장품을 잡으려는 손" /></a>
 						<p class="title">첫 구매 15% OFF</p>
 						<p class="desc">첫 구매 고객 15% OFF부터<br>전 구매 무료 배송 혜택까지</p>
 					</li>
 					<li>
-						<img src="images/img_index_event_03.jpg" alt="크리스마스 디자인으로 포장된 화장품들" />
+						<a href="event_01.html"><img src="images/img_index_event_03.jpg" alt="크리스마스 디자인으로 포장된 화장품들" /></a>
 						<p class="title">파우치 속 Luxury Item</p>
 						<p class="desc">메이크업 잇템 총집합<br>5만원 이상 구매 시 파우치 증정</p>
 					</li>
 					<li>
-						<img src="images/img_index_event_02.jpg" alt="테이블 위에 놓여진 화장품들" />
+						<a href="event_01.html"><img src="images/img_index_event_02.jpg" alt="테이블 위에 놓여진 화장품들" /></a>
 						<p class="title">Picker Holidays</p>
 						<p class="desc">12월은 매일 매일 크리스마스<br>2021.12.01~2021.12.31</p>
 					</li>			
 					<li>
-						<img src="images/img_index_event_04.jpg" alt="find your beauty" />
+						<a href="event_01.html"><img src="images/img_index_event_04.jpg" alt="find your beauty" /></a>
 						<p class="title">김쿨톤 찾기</p>
 						<p class="desc">내가 바로 대한민국의 김쿨톤이다!<br>2021.11.20~2021.11.27</p>
 					</li>
@@ -866,9 +869,113 @@
 
 	</footer>
 
-	<button class="btn_top">
+	<a class="btn_top" href="#" role="button">
 		<span>TOP</span>
-	</button>
+	</a>
+
+	<script>
+		// menu toggle
+		let btnToggle = document.getElementById("btnToggle");
+		let $header = document.getElementById("header");
+
+		// like toggle
+		let btnLikes = document.querySelectorAll(".like");
+
+		// tooltips
+		let btnTooltips = document.querySelectorAll(".btn_tooltips > button");
+		let tt_info = [
+			["images/img_index_weekly_tooltip_eyebrow.jpg", "shuuemura eyebrow", "shu uemura", "하드 포뮬라 - 스톤 그레이", "picker/eyebrow#shuuemura.html"],
+			["images/img_index_weekly_tooltip_eyeshadow.jpg", "mac eyeshadow", "mac", " 바이 나인 팔레트", "picker/eyeshadow#mac.html"],
+			["images/img_index_weekly_tooltip_face.jpg", "espoir face", "espoir", "프로 테일러 비 글로우 쿠션 올 뉴 SPF42 PA++(단품+리필) - 21호", "picker/face#espoir.html"],
+			["images/img_index_weekly_tooltip_lip.jpg", "bobbibrown lip", "bobbibrown", "크러쉬드 샤인 젤리스틱", "picker/lip#bobbibrown.html"]
+		];
+		let sWeekly = document.querySelector("section.weekly");
+
+		// toprank
+		let tabs = document.querySelectorAll("div.tabs_wrap > ul > li");
+		var tabsBar = document.querySelectorAll("div.tabs_wrap > ul > li")[12];
+		let lists = document.querySelectorAll("ul.lists_wrap > li");
+
+
+
+		// ===== addImg random =====
+		function addNumRandom(){
+			let num = Math.ceil(Math.random() * 10) % 4;
+			if(num > 0 && num < 4){
+			document.querySelector("div.add_wrap img").src = 'images/img_index_header_gnb_banner_0'+ num +'.png';
+			}
+			else{
+				document.querySelector("div.add_wrap img").src = 'images/img_index_header_gnb_banner_03.png';
+			}
+		}
+
+		// ===== menu toggle =====
+		btnToggle.addEventListener('click', function(e){
+			let e2 = e ? e : window.event;
+			$header.classList.toggle('on');
+			addNumRandom();
+		});
+
+		// ===== header.bg =====
+		window.addEventListener('scroll',function(e){
+			let e2 = e ? e : window.event;
+			if(window.scrollY >= sWeekly.offsetTop){
+				$header.classList.add('bg');
+			}
+			else{
+				$header.classList.remove('bg');
+			}
+		});
+		
+		// ===== like toggle =====
+		for(let i = 0; i < btnLikes.length; i++){
+			btnLikes[i].addEventListener('click', function(e){
+				let e2 = e ? e : window.event;
+				btnLikes[i].classList.toggle('active');
+			});
+		}
+		
+
+		// ===== tooltips =====
+		for(let i = 0; i < btnTooltips.length; i++){
+			btnTooltips[i].addEventListener('click', function(e){
+				let e2 = e ? e : window.event;
+				document.getElementById("tt_img").src = tt_info[i][0];
+				document.getElementById("tt_img").alt.innerHTML = tt_info[i][1];
+				document.getElementById("tt_title").innerHTML = tt_info[i][2];
+				document.getElementById("tt_desc").innerHTML = tt_info[i][3];
+				document.getElementById("tt_more").href = tt_info[i][4];
+				sWeekly.classList.add('on');
+			});
+		}
+
+		document.getElementById("tt_close").addEventListener('click',function(e){
+			let e2 = e ? e : window.event;
+			sWeekly.classList.remove('on');
+		});
+
+		// ===== toprank =====
+		for(let i = 0; i < lists.length; i++){
+			tabs[i].addEventListener('click', function(e){
+				let e2 = e ? e : window.event;
+				for(let i = 0; i < lists.length; i++){
+					tabs[i].classList.remove('active');
+					lists[i].classList.remove('active');
+				}
+				tabs[i].classList.add('active');
+				lists[i].classList.add('active');
+				tabsBar.style.left = tabs[i].offsetLeft + document.body.scrollLeft + "px";
+				tabsBar.style.width = tabs[i].offsetWidth + "px";
+			});
+		}
+
+		
+		
+		
+		
+	
+		
+	</script>
 
 </body>
 
