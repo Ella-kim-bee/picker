@@ -90,7 +90,7 @@
 	
 
 	/* === section.category === */
-	section.category { height: 74vh; max-height: 330px; margin-top: 50px; }
+	section.category { height: 74vh; max-height: 350px; margin-top: 50px; }
 	section.category div.inner_wrap { width: 90vw; }
 	
 	section.category ul.cate_wrap_M { float: left; width: 40%; height: 250px; }
@@ -150,7 +150,7 @@
 	section.toprank div.tabs_wrap { position: relative; width: 100%; border-bottom: 1px solid #ddd; z-index: 1;  }
 	section.toprank div.tabs_wrap::after { content: ""; position: absolute; right: 0; bottom: 1px; width: 50px; height: 50px;
 	background: rgba(255, 255, 255, 0.8); box-shadow: -5px 0 5px rgba(255, 255, 255, 0.8); }
-	section.toprank div.tabs_wrap ul { position: relative; width: 1335px; margin: 0 auto; }
+	section.toprank div.tabs_wrap ul { position: relative; width: max-content; margin: 0 auto; }
 	section.toprank div.tabs_wrap li { float: left;  padding: 0.625em; margin-right: 6.2px;  }
 	section.toprank div.tabs_wrap li.active > button { color: #803636; font-weight: bold; }
 	section.toprank div.tabs_wrap li > button { display: block; width: 100%; font-size: 1em;  text-align: center; }
@@ -380,7 +380,7 @@
 	section.toprank div.tabs_wrap { position: relative; width: 100%; border-bottom: 1px solid #ddd; z-index: 1;  }
 	section.toprank div.tabs_wrap::after { content: ""; position: absolute; right: 0; bottom: 1px; width: 50px; height: 50px;
 	background: rgba(255, 255, 255, 0.8); box-shadow: -5px 0 5px rgba(255, 255, 255, 0.8); }
-	section.toprank div.tabs_wrap ul { position: relative; width: 1335px; margin: 0 auto; }
+	section.toprank div.tabs_wrap ul { position: relative; width: max-content; margin: 0 auto; }
 	section.toprank div.tabs_wrap li { float: left;  padding: 0.625em; margin-right: 6.2px;  }
 	section.toprank div.tabs_wrap li.active > button { color: #803636; font-weight: bold; }
 	section.toprank div.tabs_wrap li > button { display: block; width: 100%; font-size: 1.375em;  text-align: center; }
@@ -451,20 +451,6 @@
 
 
 	/* === section.event === */
-	/*section.event { position: relative; margin-top: 100px; margin-bottom: 100px; }
-	section.event h2 + .btn_common { position: absolute; right: 0; top: 8px; }
-
-	section.event div.inner_wrap_02 { width: 1152px; }
-
-	section.event div.view_mask { overflow: hidden; position: relative; width: 100%; }
-	section.event div.view_mask ul { width: 100%; }
-	section.event div.view_mask li { float: left; position: relative; width: 25%; padding: 0 12px; text-align: center; }
-	section.event div.view_mask li > img { display: block; width: 100%; height: auto; }
-	section.event div.view_mask li > p.title { margin: 0.833333em 0; font-size: 1.125em; font-weight: bold; font-family: "NotoSansKR-Regular"; }
-	section.tools div.view_mask li > p.desc { font-size: 0.875em; font-family: "NotoSansKR-Regular"; }
-
-	section.event div.pagination { display: none; }*/
-
 	section.event { position: relative; margin-top: 100px; margin-bottom: 100px; }
 	section.event h2 + .btn_common { position: absolute; right: 0; top: 8px; margin-right: 20px; }
 	section.event h2 { margin-left: 20px; }
