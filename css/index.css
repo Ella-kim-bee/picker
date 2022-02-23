@@ -205,10 +205,40 @@
 	section.newbrand div.info_wrap { width: 100%; height: 200px; background: #111; }
 	section.newbrand div.info_wrap > div.inner_wrap { width: 100%; height: 100%; }
 	section.newbrand div.info_wrap ul { position: relative; width: 100%; height: 100%; margin: 0 auto; text-align: center; }
-	section.newbrand div.info_wrap ul > li { display: none; position: absolute; width: 100%; height: 100%; transform: translateY(-36%); }
-	section.newbrand div.info_wrap ul > li:nth-child(1) { display: block; }
+	section.newbrand div.info_wrap ul > li { display: block; position: absolute; left: 0; top: 15%; width: 100%; height: 100%; transform: translateY(-50%); }
+	section.newbrand div.info_wrap ul > li:nth-child(1) { opacity: 1; z-index: 10; animation:fadeInOut_01 10s infinite; }
+	section.newbrand div.info_wrap ul > li:nth-child(2) { opacity: 0; z-index: 5; animation:fadeInOut_02 10s infinite; }
+	section.newbrand div.info_wrap ul > li:nth-last-child(1) { opacity: 0; z-index: 4; animation:fadeInOut_03 10s infinite; }
 	section.newbrand div.info_wrap ul > li > img { display: inline-block; width: 140px; height: 140px; margin-bottom: 20px; border-radius: 50%; }
 	section.newbrand div.info_wrap ul > li > p.desc { color: #fff; font-family: "NotoSansKR-Regular"; font-size: 0.75em; } 
+
+	@keyframes fadeInOut_01
+   {
+     0%   {opacity:1}
+	 28% { opacity: 1}
+     33.333% { opacity: 0}
+     66.666% { opacity: 0}
+	 94% { opacity: 0}
+     100% { opacity: 1}
+   }
+   @keyframes fadeInOut_02
+   {
+     0%   {opacity:0}
+	 28% { opacity: 0}
+     33.333% { opacity: 1}
+	 58% { opacity: 1}
+     66.666% { opacity: 0 }
+     100% { opacity: 0}
+   }
+   @keyframes fadeInOut_03
+   {
+     0%   {opacity:0}
+     33.333% { opacity: 0}
+	 58% { opacity: 0}
+     66.666% { opacity: 1}
+	 94% { opacity: 1}
+     100% { opacity: 0}
+   }
 
 
 	/* === section.event === */
@@ -378,9 +408,9 @@
 	section.toprank h2 { margin: 0 0 50px 20px; }
 
 	section.toprank div.tabs_wrap { position: relative; width: 100%; border-bottom: 1px solid #ddd; z-index: 1;  }
-	section.toprank div.tabs_wrap::after { content: ""; position: absolute; right: 0; bottom: 1px; width: 50px; height: 50px;
+	section.toprank div.tabs_wrap[class~="blur"]::after { content: ""; position: absolute; right: 0; bottom: 1px; width: 50px; height: 50px;
 	background: rgba(255, 255, 255, 0.8); box-shadow: -5px 0 5px rgba(255, 255, 255, 0.8); }
-	section.toprank div.tabs_wrap ul { position: relative; width: max-content; margin: 0 auto; }
+	section.toprank div.tabs_wrap ul { position: relative; left: 0; width: max-content; margin: 0 auto; transform: translateX(0); transition: transform 0.5s; }
 	section.toprank div.tabs_wrap li { float: left;  padding: 0.625em; margin-right: 6.2px;  }
 	section.toprank div.tabs_wrap li.active > button { color: #803636; font-weight: bold; }
 	section.toprank div.tabs_wrap li > button { display: block; width: 100%; font-size: 1.375em;  text-align: center; }
@@ -605,7 +635,7 @@
 	section.bestseller h2 + .btn_common { position: absolute; right: 0; top: 8px; }
 
 	section.bestseller div.view_mask { overflow: hidden; position: relative; width: 1152px; margin: 0 auto; }
-	section.bestseller div.view_mask ul { width: 150%; }
+	section.bestseller div.view_mask ul { width: 150%; position: relative; left: 0px; transition: left 0.3s ease-in; }
 	section.bestseller div.view_mask li { float: left; position: relative; width: 16.66666%; height: 420px; padding: 0 10px; font-family: "NotoSansKR-Regular"; text-align: center; 
 	line-height: 1; }
 	section.bestseller div.view_mask li a { color: #222; }
@@ -658,13 +688,13 @@
 	background: url("../images/img_index_toprant_02.png") no-repeat; background-size: contain; }
 	section.toprank ul.product_wrap > li:nth-child(3) > a::after { top: -6px; left: 106px; width: 12.367491%; height: 52.093%; 
 	background: url("../images/img_index_toprant_03.png") no-repeat; background-size: contain; }
-	section.toprank ul.product_wrap div.info { float: left; width: 50%; margin-top: 12.3vh; font-family: "NotoSansKR-Regular"; text-align: center; }
+	section.toprank ul.product_wrap div.info { float: left; width: 50%; margin-top: 105px; font-family: "NotoSansKR-Regular"; text-align: center; }
 	section.toprank ul.product_wrap p.brand { margin-bottom: 0.3125em; font-size: 0.875em; }
 	section.toprank ul.product_wrap p.title { margin-bottom: 0.5555555em; font-size: 1.125em; line-height: 1; }
 	section.toprank ul.product_wrap p.price { margin-bottom: 0.3125em; font-size: 1em; }
 	section.toprank ul.product_wrap img { float: right; display: block; width: 50%; height: 100%; object-fit: contain; }
 
-	section.toprank ul.product_wrap a.top_01 div.info { float: left; width: 50%; margin-top: 24.04166666vh; font-family: "NotoSansKR-Regular"; text-align: center; }
+	section.toprank ul.product_wrap a.top_01 div.info { float: left; width: 50%; margin-top: 200px; font-family: "NotoSansKR-Regular"; text-align: center; }
 	section.toprank ul.product_wrap a.top_01 p.brand { margin-bottom: 0.2777777em; font-size: 1em; }
 	section.toprank ul.product_wrap a.top_01 p.title { margin-bottom: 0.4545454545em; font-size: 1.375em; line-height: 1; }
 	section.toprank ul.product_wrap a.top_01 p.price { margin-bottom: 0.2777777em; font-size: 1.125em; }
