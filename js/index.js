@@ -213,18 +213,18 @@ tootipClick();
 
 // ===== category mobile =====
 function cateMobVersion(cateName){
-        btnCateM.lips.parentElement.classList.remove('active');
-        btnCateM.faces.parentElement.classList.remove('active');
-        btnCateM.eyes.parentElement.classList.remove('active');
-        btnCateM[cateName].parentElement.classList.add('active');
-        for(let j = 0; j < cateLists.lips.length; j++){
-            cateLists.lips[j].style.display = 'none';
-            cateLists.faces[j].style.display = 'none';
-            cateLists.eyes[j].style.display = 'none';
-        }
-        for(let k = 0; k < cateLists[cateName].length; k++){
-            cateLists[cateName][k].style.display = 'block';
-        }
+    btnCateM.lips.parentElement.classList.remove('active');
+    btnCateM.faces.parentElement.classList.remove('active');
+    btnCateM.eyes.parentElement.classList.remove('active');
+    btnCateM[cateName].parentElement.classList.add('active');
+    for(let j = 0; j < cateLists.lips.length; j++){
+        cateLists.lips[j].style.display = 'none';
+        cateLists.faces[j].style.display = 'none';
+        cateLists.eyes[j].style.display = 'none';
+    }
+    for(let k = 0; k < cateLists[cateName].length; k++){
+        cateLists[cateName][k].style.display = 'block';
+    }
 }
 
 // ===== toprank ===== // mobile 수정 후 안되면 함수로 묶자
@@ -318,78 +318,78 @@ let tabUl = document.querySelector('div.tabs_wrap ul');
 if(isMobile) {  //tab, mob
 
    // ===== bestseller slide =====
-   function rolling_slides(_targetWrap){
+    function rolling_slides(_targetWrap){
 
-    const sectionName = _targetWrap; // .bestseller
-    let viewUl = document.querySelector(sectionName +' div.view_mask > ul');
-    let viewUlLi = document.querySelectorAll(sectionName +' div.view_mask > ul > li');
-    const btnPrev = document.querySelector(sectionName +' button.prev');
-    const btnNext = document.querySelector(sectionName +' button.next');
+        const sectionName = _targetWrap; // .bestseller
+        let viewUl = document.querySelector(sectionName +' div.view_mask > ul');
+        let viewUlLi = document.querySelectorAll(sectionName +' div.view_mask > ul > li');
+        const btnPrev = document.querySelector(sectionName +' button.prev');
+        const btnNext = document.querySelector(sectionName +' button.next');
 
-    let clickEvent = true;
-    let setItv = 0; // undefined
-    let setItv_02 = 0;
-    
-    function init(){
-        for(let i = 0; i < viewUlLi.length; i++){
-            viewUlLi[i].classList.remove('prodect_li_prev')
-            viewUlLi[i].classList.remove('prodect_li_next')
+        let clickEvent = true;
+        let setItv = 0; // undefined
+        let setItv_02 = 0;
+        
+        function init(){
+            for(let i = 0; i < viewUlLi.length; i++){
+                viewUlLi[i].classList.remove('prodect_li_prev')
+                viewUlLi[i].classList.remove('prodect_li_next')
+            }
         }
-    }
-    function prodect_prev(){
-        stopSetItv();
-        viewUlLi =  document.querySelectorAll(sectionName +' div.view_mask > ul > li');
-        for(let i = 0; i < viewUlLi.length; i++){
-            viewUlLi[i].classList.add('prodect_li_prev')
+        function prodect_prev(){
+            stopSetItv();
+            viewUlLi =  document.querySelectorAll(sectionName +' div.view_mask > ul > li');
+            for(let i = 0; i < viewUlLi.length; i++){
+                viewUlLi[i].classList.add('prodect_li_prev')
+            }
+            viewUl.insertBefore(viewUlLi[viewUlLi.length - 1], viewUl.firstElementChild);
+            clickEvent = true;
+            startSetItv();
         }
-        viewUl.insertBefore(viewUlLi[viewUlLi.length - 1], viewUl.firstElementChild);
-        clickEvent = true;
+        function prodect_next(){
+            stopSetItv();
+            viewUlLi =  document.querySelectorAll(sectionName +' div.view_mask > ul > li');
+            for(let i = 0; i < viewUlLi.length; i++){
+                viewUlLi[i].classList.add('prodect_li_next')
+            }
+            viewUl.appendChild(viewUlLi[0]);
+            clickEvent = true;
+            startSetItv();
+        }
+        
+
+        btnPrev.addEventListener('click',function(){
+            if(clickEvent){
+                clickEvent = false;
+                prodect_prev();
+            }
+        });
+        
+        function nextItv(){ 
+            if(clickEvent){
+                clickEvent = false;
+                prodect_next();
+            }
+        }
+        
+        btnNext.addEventListener('click', nextItv);
+
+        // interval
+        function startSetItv(){
+            if(setItv != 0) clearInterval(setItv);
+            if(setItv != 0) clearInterval(setItv_02);
+            setItv = setInterval(nextItv, 3000);
+            setItv_02 = setInterval(init, 100);
+        }
+        function stopSetItv(){
+            if(setItv != 0) clearInterval(setItv);
+            if(setItv != 0) clearInterval(setItv_02);
+            setItv = 0;
+            setItv_02 = 0;
+        }
         startSetItv();
     }
-    function prodect_next(){
-        stopSetItv();
-        viewUlLi =  document.querySelectorAll(sectionName +' div.view_mask > ul > li');
-        for(let i = 0; i < viewUlLi.length; i++){
-            viewUlLi[i].classList.add('prodect_li_next')
-        }
-        viewUl.appendChild(viewUlLi[0]);
-        clickEvent = true;
-        startSetItv();
-    }
-    
-
-    btnPrev.addEventListener('click',function(){
-        if(clickEvent){
-            clickEvent = false;
-            prodect_prev();
-        }
-    });
-    
-    function nextItv(){ 
-        if(clickEvent){
-            clickEvent = false;
-            prodect_next();
-        }
-    }
-    
-    btnNext.addEventListener('click', nextItv);
-
-    // interval
-    function startSetItv(){
-        if(setItv != 0) clearInterval(setItv);
-        if(setItv != 0) clearInterval(setItv_02);
-        setItv = setInterval(nextItv, 3000);
-        setItv_02 = setInterval(init, 100);
-    }
-    function stopSetItv(){
-        if(setItv != 0) clearInterval(setItv);
-        if(setItv != 0) clearInterval(setItv_02);
-        setItv = 0;
-        setItv_02 = 0;
-    }
-    startSetItv();
-
-rolling_slides(".bestseller");
+    rolling_slides(".bestseller");
 
 
     // ===== bestseller slide =====
@@ -462,7 +462,7 @@ rolling_slides(".bestseller");
     }
 
     slider();*/
-///////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////
 
     if(screen.width >= 768){ // tab
          // ===== top rank tablet swipe =====
@@ -719,6 +719,6 @@ rolling_slides(".bestseller");
             dots.removeClass("active");
             dots.eq(num).addClass("active");
             }*/
-        }   
+           
     }
 }
