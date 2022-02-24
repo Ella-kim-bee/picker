@@ -318,7 +318,7 @@ let tabUl = document.querySelector('div.tabs_wrap ul');
 if(isMobile) {  //tab, mob
 
    // ===== bestseller slide =====
-    function rolling_slides(_targetWrap){
+    function rolling_slides_TM(_targetWrap){
 
         const sectionName = _targetWrap; // .bestseller
         let viewUl = document.querySelector(sectionName +' div.view_mask > ul');
@@ -389,7 +389,7 @@ if(isMobile) {  //tab, mob
         }
         startSetItv();
     }
-    rolling_slides(".bestseller");
+    rolling_slides_TM(".bestseller");
 
 
     // ===== bestseller slide =====
