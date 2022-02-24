@@ -410,6 +410,23 @@ if(isMobile) {  //tab, mob
     ///////////////////////////////////////////////////////////////////
 
     if(screen.width >= 768){ // tab
+        
+    }
+    else { // mob
+        // ===== tooltips & scrollY 제어 =====
+        tootipClick();
+        for(let i = 0; i < btnTooltips.length; i++){
+            btnTooltips[i].addEventListener('click', function(e){
+                document.body.classList.add('scroll_disable');
+            });
+        }
+        document.getElementById("tt_close").addEventListener('click',function(e){
+            document.body.classList.remove('scroll_disable');
+        });
+
+        // ===== category mobile =====
+        cateMobVersion;
+        
         // ===== event slide =====
         function rolling_slides(_targetWrap){
 
@@ -479,21 +496,5 @@ if(isMobile) {  //tab, mob
         }
 
         rolling_slides(".event");
-           
-    }
-    else { // mob
-        // ===== tooltips & scrollY 제어 =====
-        tootipClick();
-        for(let i = 0; i < btnTooltips.length; i++){
-            btnTooltips[i].addEventListener('click', function(e){
-                document.body.classList.add('scroll_disable');
-            });
-        }
-        document.getElementById("tt_close").addEventListener('click',function(e){
-            document.body.classList.remove('scroll_disable');
-        });
-
-        // ===== category mobile =====
-        cateMobVersion;
     }
 }
