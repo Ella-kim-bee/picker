@@ -227,20 +227,24 @@ function cateMobVersion(cateName){
     }
 }
 
-// ===== toprank ===== // mobile 수정 후 안되면 함수로 묶자
-for(let i = 0; i < lists.length; i++){
-    tabs[i].addEventListener('click', function(e){
-        let e2 = e ? e : window.event;
-        for(let i = 0; i < lists.length; i++){
-            tabs[i].classList.remove('active');
-            lists[i].classList.remove('active');
-        }
-        tabs[i].classList.add('active');
-        lists[i].classList.add('active');
-        tabsBar.style.left = tabs[i].offsetLeft + document.body.scrollLeft + "px";
-        tabsBar.style.width = tabs[i].offsetWidth + "px";
-    });
+// ===== toprank ===== // 
+function toprank_tab(){
+    for(let i = 0; i < lists.length; i++){
+        tabs[i].addEventListener('click', function(e){
+            let e2 = e ? e : window.event;
+            for(let i = 0; i < lists.length; i++){
+                tabs[i].classList.remove('active');
+                lists[i].classList.remove('active');
+            }
+            tabs[i].classList.add('active');
+            lists[i].classList.add('active');
+            tabsBar.style.left = tabs[i].offsetLeft + document.body.scrollLeft + "px";
+            tabsBar.style.width = tabs[i].offsetWidth + "px";
+        });
+    }
 }
+toprank_tab();
+
 ////////////////////////////////////////////////////////////////////////////////////////
 
 if(!isMobile){ // desktop
@@ -391,169 +395,193 @@ if(isMobile) {  //tab, mob
     }
     rolling_slides_TM(".bestseller");
 
+    // ===== toprank swipe =====
 
-    // ===== bestseller slide =====
-    /*function slider(){
-        const lists = document.querySelectorAll(".bestseller ul.slideAnimate > li"); //slides
-        const best_prev = document.querySelector(".bestseller buton.prev");
-        const best_next = document.querySelector(".bestseller buton.next");
-        let cnt = 0; // 
-        let si_01 = 0; // interval
+    let curPos = 0;
+    let postion = 0;
+    let start_x, end_x;
+    const IMAGE_WIDTH = document.querySelector('.toprank .lists_wrap').offsetWidth;
+    const images = document.querySelector('.toprank .lists_wrap'); 
+    const tab_ul = document.querySelector('.tabs_wrap > ul');
+    let tab_num = 1;
+    
+    
+    images.addEventListener('touchstart', touch_start);
+    images.addEventListener('touchend', touch_end);
+    
+
+    function init(){
+        for(let i = 0; i < lists.length; i++){
+            tabs[i].classList.remove('active');
+            lists[i].classList.remove('active');
+        }
+    }
+    function tab(){
+        if(tabs[curPos].offsetLeft + document.body.scrollLeft >= window.innerWidth - tabs[lists.length - 1].offsetWidth){
+            tab_num = tab_num + 1;
+            tab_ul.style.transform = `translateX(-${tabs[curPos - 1].offsetWidth}px)`;
+            console.log(tab_num)
+            console.log(tabsBar.style.left)
+            return tab_num;           
+        }
+        else{
+            tab_ul.style.transform = 'translateX(0px)'
+        }
+    }
+    function prev(){
+        init();
+        if(curPos > 0){
+            tabs[curPos - 1].classList.add('active');
+            lists[curPos - 1].classList.add('active');
+            tabsBar.style.left = tabs[curPos - 1].offsetLeft + document.body.scrollLeft + "px";
+            tabsBar.style.width = tabs[curPos - 1].offsetWidth + "px";
+            tab();
+            curPos = curPos - 1;
+        }
+        else{
+            tabs[0].classList.add('active');
+            lists[0].classList.add('active');
+            tabsBar.style.left = tabs[0].offsetLeft + document.body.scrollLeft + "px";
+            tabsBar.style.width = tabs[0].offsetWidth + "px";
+            tab();
+            curPos = 0;
+        }
         
-        for(let i = 0; i < visual_pns.length; i++){
-            visual_pns[i].addEventListener("click",function(){
-                let cur_num = i;
-                if(cur_num == cnt) return;
-                cnt = cur_num;
-                slide_img(cnt, 'none');
-                pagination_change(cnt);
-            });
-        }
-
-        function count_plus(){
-            cnt = cnt == lists.length - 1 ? 0 : cnt + 1;
-            slide_img(cnt, 'transform 0.5s');
-        }
-
-        function count_minus(){
-            cnt = cnt == 0 ? lists.length - 1 : cnt - 1;
-            slide_img(cnt, 'transform 0.5s');
-        }
-
-        function slide_img(num, transition_val){
-            stop_si();
-            let next_num = num == lists.length - 1 ? 0 : num + 1;
-            let prev_num = num == 0 ? lists.length - 1 : num - 1;
-            for(let i = 0; i < lists.length; i++){
-                lists[i].style.transition = 'none';
-            }
-            if(lists.length == 2){
-                lists[next_num].style.transition = transition_val;
-                if(num == 0){
-                    lists[next_num].style.transition = transition_val;
-                }
-                else if(num == 1){
-                    lists[prev_num].style.transition = transition_val;
-                }
-                
-            }
-            else if(lists.length >= 3){
-                lists[num].style.transition = transition_val;
-            }
-            
-            start_si();
-        }
-
-        function start_si(){
-            if(si_01 != 0){
-                clearInterval(si_01)
-            }
-            si_01 = setInterval(count_plus, 3000);
-        }
-
-        function stop_si(){
-            if(si_01 != 0){
-                clearInterval(si_01)
-            }
-            si_01 = 0;
-        }
-
-        start_si();
     }
 
-    slider();*/
-    ///////////////////////////////////////////////////////////////////
+    function next(){
+        init();
+        if(curPos > lists.length - 2){
+            tabs[lists.length - 1].classList.add('active');
+            lists[lists.length - 1].classList.add('active');
+            tabsBar.style.left = tabs[lists.length - 1].offsetLeft + document.body.scrollLeft + "px";
+            tabsBar.style.width = tabs[lists.length - 1].offsetWidth + "px";
+            tab();
+            curPos = lists.length - 1;
+        }
+        else{
+            tabs[curPos + 1].classList.add('active');
+            lists[curPos + 1].classList.add('active');
+            tabsBar.style.left = tabs[curPos + 1].offsetLeft + document.body.scrollLeft + "px";
+            tabsBar.style.width = tabs[curPos + 1].offsetWidth + "px";
+            tab();
+            curPos = curPos + 1;
+        }
+        
+    }
+    
+    function touch_start(event) {
+    start_x = event.touches[0].pageX
+    }
+    
+    function touch_end(event) {
+    end_x = event.changedTouches[0].pageX;
+    if(start_x > end_x){
+        next();
+    }else{
+        prev();
+    }
+         
 
-    if(screen.width >= 768){ // tab
-         // ===== top rank tablet swipe =====
+   /* function swipe(){
+        let lists_wrap = document.querySelector('.toprank .lists_wrap');
+        let num = 0;
+        let currentX;
         function initTouch(e) {
             initialX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
+            console.log(initialX);
         };
 
         function swipeDirection(e) {
             if (initialX !== null) {
-                const currentX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
+                //const currentX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
                 let diffX = initialX - currentX;
-                if(diffX < 0 ){
-                    tabUl.style.transform = `translateX(0px)`; //  console.log("to left")
-                    document.querySelector('div.tabs_wrap').classList.add('blur');
+                if(diffX < 0 ){ //  console.log("to left")
+                    num = num - 1;
+                    for(let i = 0; i < lists.length; i++){
+                        tabs[i].classList.remove('active');
+                        lists[i].classList.remove('active');
+                    }
+                    if(num < 0){
+                        tabs[0].classList.add('active');
+                        lists[0].classList.add('active');
+                        tabsBar.style.left = tabs[0].offsetLeft + document.body.scrollLeft + "px";
+                        tabsBar.style.width = tabs[0].offsetWidth + "px";
+                        console.log('num < 0 : ', num)
+                        return num = 0;
+                    }
+                    else{
+                        tabs[num].classList.add('active');
+                        lists[num].classList.add('active');
+                        tabsBar.style.left = tabs[num].offsetLeft + document.body.scrollLeft + "px";
+                        tabsBar.style.width = tabs[num].offsetWidth + "px";
+                        document.querySelector('div.tabs_wrap').classList.add('blur');
+                        console.log('num < 0 else : ',num)
+                        return num;
+                    }
                 }
-                else{
-                    tabUl.style.transform = `translateX(-${tabUl.offsetWidth - window.outerWidth}px)`; // console.log("to right")
-                    document.querySelector('div.tabs_wrap').classList.remove('blur');
+                else{ // console.log("to right")
+                    num = num + 1;
+                    for(let i = 0; i < lists.length; i++){
+                        tabs[i].classList.remove('active');
+                        lists[i].classList.remove('active');
+                    }
+                    if(num > lists.length){
+                        tabs[lists.length - 1].classList.add('active');
+                        lists[lists.length - 1].classList.add('active');
+                        tabsBar.style.left = tabs[num].offsetLeft + document.body.scrollLeft + "px";
+                        tabsBar.style.width = tabs[num].offsetWidth + "px";
+                        document.querySelector('div.tabs_wrap').classList.remove('blur');
+                        console.log('num > lists.length : ',num)
+                        return num = lists.length - 1;
+                    }
+                    else{
+                        tabs[num].classList.add('active');
+                        lists[num].classList.add('active');
+                        tabsBar.style.left = tabs[num].offsetLeft + document.body.scrollLeft + "px";
+                        tabsBar.style.width = tabs[num].offsetWidth + "px";
+                        console.log('num > lists.length else : ',num)
+                        return num;
+                    }
                 }
-                initialX = null;
             }
+            initialX = null;
+           
         }
-        tabUl.addEventListener("touchstart", initTouch);
-        tabUl.addEventListener("touchmove", swipeDirection);
+        lists_wrap.addEventListener("touchstart", initTouch);
+        lists_wrap.addEventListener("touchend", swipeDirection);
+
+
+        /*function toprank_tab(){
+            for(let i = 0; i < lists.length; i++){
+                tabs[i].addEventListener('click', function(e){
+                    let e2 = e ? e : window.event;
+                    for(let i = 0; i < lists.length; i++){
+                        tabs[i].classList.remove('active');
+                        lists[i].classList.remove('active');
+                    }
+                    tabs[i].classList.add('active');
+                    lists[i].classList.add('active');
+                    tabsBar.style.left = tabs[i].offsetLeft + document.body.scrollLeft + "px";
+                    tabsBar.style.width = tabs[i].offsetWidth + "px";
+                });
+            }
+        }*/
     }
-    else { // mob
-        // ===== tooltips & scrollY 제어 =====
-        tootipClick();
-        for(let i = 0; i < btnTooltips.length; i++){
-            btnTooltips[i].addEventListener('click', function(e){
-                document.body.classList.add('scroll_disable');
-            });
-        }
-        document.getElementById("tt_close").addEventListener('click',function(e){
-            document.body.classList.remove('scroll_disable');
-        });
+    //swipe();
+
+
+    ///////////////////////////////////////////////////////////////////
+
+    if(screen.width >= 768){ // tab
+        // ===== toprank swipe tab =====
 
         // ===== category mobile =====
         cateMobVersion;
 
-        // ===== toprank swipe =====
-        function initTouch(e) {
-            initialX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
-        };
-
-        function swipeDirection(e) {
-            if (initialX !== null) {
-                const currentX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
-                let diffX = initialX - currentX;
-                if(diffX < 0 ){
-                    tabUl.style.transform = `translateX(0px)`; //  console.log("to left")
-                    document.querySelector('div.tabs_wrap').classList.add('blur');
-                }
-                else {
-                    if(tabUl.style.transform == `translateX(-150px)`){
-                        tabUl.style.transform = `translateX(-300px)`;
-                    }
-                    else if(tabUl.style.transform == `translateX(-300px)`){
-                        tabUl.style.transform = `translateX(-450px)`;
-                    }	
-                    else if(tabUl.style.transform == `translateX(-450px)`){
-                        tabUl.style.transform = `translateX(-${tabUl.offsetWidth - window.outerWidth}px)`;
-                        document.querySelector('div.tabs_wrap').classList.remove('blur');
-                    }
-                    else if(tabUl.style.transform == `translateX(-${tabUl.offsetWidth - window.outerWidth}px)`){
-                        tabUl.style.transform = `translateX(-${tabUl.offsetWidth - window.outerWidth}px)`;
-                        document.querySelector('div.tabs_wrap').classList.remove('blur');
-                    }
-                    else{
-                        tabUl.style.transform = `translateX(-150px)`;
-                    }
-
-                    /*if(tabUl.style.transform == `translateX(-200px)`){
-                        tabUl.style.transform = `translateX(-${tabUl.offsetWidth - window.outerWidth}px)`; // console.log("to right")
-                        document.querySelector('div.tabs_wrap').classList.remove('blur')
-                        console.log(diffX)
-                    }
-                    else if(tabUl.style.transform = `translateX(-${tabUl.offsetWidth - window.outerWidth}px)`){
-                    }
-                    else {
-                        tabUl.style.transform = `translateX(-200px)`;
-                        console.log("*2"+diffX)
-                    }*/
-                }
-            }
-                initialX = null;
-        }
-        tabUl.addEventListener("touchstart", initTouch);
-        tabUl.addEventListener("touchmove", swipeDirection);
+        // ===== toprank swipe mob =====
         
-
+        // ===== event slide =====
         function rolling_slides(_targetWrap){
 
             const sectionName = _targetWrap; // .event
@@ -622,103 +650,6 @@ if(isMobile) {  //tab, mob
         }
 
         rolling_slides(".event");
-
-        // ===== event mobile slide =====
-        /*function clickSlide(){ 
-            var slides = $('.inner_wrap_half .info_wrap'),
-                slideCount = slides.length,
-                currentIndex = 0;
-
-            var imgs = $('.imgs_wrap .img_wrap'),
-                imgCount = imgs.length,
-                currentImg = 0;
-
-            var dots = $('.pagination_01 .dot_01'),
-                dotCount = dots.length,
-                currentDot = 0;
-
-            let cnt = 0; 
-            
-            //해당 시간이 지나면 한 번만 할 일
-            //var timer = setTimeout(할일, 1000); 
-            //clearTimeout(대상의 이름);
-
-            //일정시간마다 할일
-            //var timer = setInterval(할일, 시간);
-            //clearInterval(timer);
-            
-            //제이쿼리 집합개체(object) 중 특정번째 요소 선택 .eq
-            //.eq(숫자)<-해당하는 요소를 선택 equivalent 동등한, 인덱스 번호와 동등한 요소
-            //요소를 서서히 나타나도록 .fadeIn()
-
-            slides.eq(currentIndex).fadeIn();
-            imgs.eq(currentImg).fadeIn();
-            dots.eq(currentDot).addClass('active');
-
-
-            var timer = setInterval(showNextSlides, 4000);
-            var timer01 = setInterval(displayNextImgs, 4000);
-            var timer02 = setInterval(activeDots, 4000);
-            //clearInterval(timer);
-
-            function activeDots(){ 
-                var nextDot = (currentDot +1) % dotCount;
-                dots.eq(currentDot).removeClass('active');
-                dots.eq(nextDot).addClass('active');
-                currentDot = nextDot;
-
-            }
-            function showNextSlides(){
-                    //ci가 0 번일 때, 1이 들어와야함, ci 1 ni 2, ci 2 ni 3, ci 3 ni 0
-                    //slideCount 4
-                    var nextIndex = (currentIndex +1) % slideCount; //슬라이드 길이로 나눠주면 다시 0번으로 갈 수 있음
-                    //1. 현재 슬라이드가 사라지고 
-                    slides.eq(currentIndex).fadeOut();
-                    //2. 다음 슬라이드가 나타난다.
-                    slides.eq(nextIndex).fadeIn();
-                    currentIndex = nextIndex;
-            } 
-
-            function displayNextImgs(){
-                var nextImg = (currentImg +1) % imgCount;
-                imgs.eq(currentImg).fadeOut();
-                imgs.eq(nextImg).fadeIn();
-                currentImg = nextImg;
-            }
-
-
-            //도트 클릭하면 그 도트, 이미지, 슬라이드 들어오게 하기
-
-            dots.on("click", function(){
-            var curNum = dots.index(this);
-            if(curNum == cnt) return;
-            cnt = curNum;
-            fade_imgs(cnt);
-            fade_slides(cnt);
-            page_change(cnt);        
-        })
-
-
-            function fade_imgs(num){
-            clearInt();
-            imgs.fadeOut(500);
-            imgs.eq(num).fadeIn(500, function(){
-            // setInt();
-            });
-        }
-
-            function fade_slides(num){
-            clearInt();
-            slides.fadeOut(500);
-            slides.eq(num).fadeIn(500, function(){
-            // setInt();
-            })
-            }
-    
-            function page_change(num){
-            dots.removeClass("active");
-            dots.eq(num).addClass("active");
-            }*/
            
     }
 }
