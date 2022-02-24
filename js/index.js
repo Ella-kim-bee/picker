@@ -316,9 +316,6 @@ if(!isMobile){ // desktop
     rolling_slides(".bestseller");
 }
 
-let initialX = null;
-let tabUl = document.querySelector('div.tabs_wrap ul');
-
 if(isMobile) {  //tab, mob
 
    // ===== bestseller slide =====
@@ -412,7 +409,7 @@ if(isMobile) {  //tab, mob
     if(screen.width >= 768){ // tab
         
     }
-    else { // mob
+    else if(screen.width < 768){ // mob
         // ===== tooltips & scrollY 제어 =====
         tootipClick();
         for(let i = 0; i < btnTooltips.length; i++){
@@ -429,16 +426,11 @@ if(isMobile) {  //tab, mob
 
         // ===== event slide =====
         function event_slides_M(_targetWrap){
-
             const sectionName = _targetWrap; // .event
-
-            const viewMask = document.querySelector(sectionName +' div.view_mask');
             let viewUl = document.querySelector(sectionName +' div.view_mask > ul');
             let viewUlLi = document.querySelectorAll(sectionName +' div.view_mask > ul > li');
             const paginations = document.querySelectorAll(sectionName +' div.pagination button.pages');
-
             const liWidth = viewUlLi[0].offsetWidth;
-            const duration = 300; // 이동속도
             let cnt = 1;
             let setItv = 0; // undefined
 
