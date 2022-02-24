@@ -388,7 +388,7 @@ if(isMobile) {  //tab, mob
         setItv_02 = 0;
     }
     startSetItv();
-}
+
 rolling_slides(".bestseller");
 
 
@@ -724,3 +724,5 @@ rolling_slides(".bestseller");
     
 tabUl.addEventListener("touchstart", initTouch);
 tabUl.addEventListener("touchmove", swipeDirection);
+
+}
