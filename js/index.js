@@ -426,9 +426,9 @@ if(isMobile) {  //tab, mob
 
         // ===== category mobile =====
         cateMobVersion;
-        
+
         // ===== event slide =====
-        function rolling_slides(_targetWrap){
+        function event_slides_M(_targetWrap){
 
             const sectionName = _targetWrap; // .event
 
@@ -494,7 +494,6 @@ if(isMobile) {  //tab, mob
             }
             startSetItv();
         }
-
-        rolling_slides(".event");
+        event_slides_M(".event");
     }
 }
