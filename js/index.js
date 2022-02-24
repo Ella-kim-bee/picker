@@ -395,192 +395,21 @@ if(isMobile) {  //tab, mob
     }
     rolling_slides_TM(".bestseller");
 
-    // ===== toprank swipe =====
-
-    /*let curPos = 0;
-    let postion = 0;
-    let start_x, end_x;
-    const IMAGE_WIDTH = document.querySelector('.toprank .lists_wrap').offsetWidth;
-    const images = document.querySelector('.toprank .lists_wrap'); 
-    const tab_ul = document.querySelector('.tabs_wrap > ul');
-    let tab_num = 1;
-    
-    
-    images.addEventListener('touchstart', touch_start);
-    images.addEventListener('touchend', touch_end);
-    
-
-    function init(){
-        for(let i = 0; i < lists.length; i++){
-            tabs[i].classList.remove('active');
-            lists[i].classList.remove('active');
-        }
-    }
-    function tab(){
-        if(tabs[curPos].offsetLeft + document.body.scrollLeft >= window.innerWidth - tabs[lists.length - 1].offsetWidth){
-            tab_num = tab_num + 1;
-            tab_ul.style.transform = `translateX(-${tabs[curPos - 1].offsetWidth + tabs[curPos - 1].offsetLeft}px)`;
-            console.log(tab_num)
-            console.log(tabsBar.style.left)
-            return tab_num;           
+    // ===== toprank scroll 제어 =====
+        let scroll_TF = false;
+        document.querySelector('.toprank .tabs_wrap ul').addEventListener('scroll', function(){
+            scroll_TF = true;
+        });
+        if(scroll_TF){
+            document.body.classList.add('scroll_disable');
         }
         else{
-            tab_ul.style.transform = 'translateX(0px)'
+            document.body.classList.remove('scroll_disable');
         }
-    }
-    function prev(){
-        init();
-        if(curPos > 0){
-            tabs[curPos - 1].classList.add('active');
-            lists[curPos - 1].classList.add('active');
-            tabsBar.style.left = tabs[curPos - 1].offsetLeft + document.body.scrollLeft + "px";
-            tabsBar.style.width = tabs[curPos - 1].offsetWidth + "px";
-            tab();
-            curPos = curPos - 1;
-        }
-        else{
-            tabs[0].classList.add('active');
-            lists[0].classList.add('active');
-            tabsBar.style.left = tabs[0].offsetLeft + document.body.scrollLeft + "px";
-            tabsBar.style.width = tabs[0].offsetWidth + "px";
-            tab();
-            curPos = 0;
-        }
-        
-    }
-
-    function next(){
-        init();
-        if(curPos > lists.length - 2){
-            tabs[lists.length - 1].classList.add('active');
-            lists[lists.length - 1].classList.add('active');
-            tabsBar.style.left = tabs[lists.length - 1].offsetLeft + document.body.scrollLeft + "px";
-            tabsBar.style.width = tabs[lists.length - 1].offsetWidth + "px";
-            tab();
-            curPos = lists.length - 1;
-        }
-        else{
-            tabs[curPos + 1].classList.add('active');
-            lists[curPos + 1].classList.add('active');
-            tabsBar.style.left = tabs[curPos + 1].offsetLeft + document.body.scrollLeft + "px";
-            tabsBar.style.width = tabs[curPos + 1].offsetWidth + "px";
-            tab();
-            curPos = curPos + 1;
-        }
-        
-    }
-    
-    function touch_start(event) {
-    start_x = event.touches[0].pageX
-    }
-    
-    function touch_end(event) {
-    end_x = event.changedTouches[0].pageX;
-    if(start_x > end_x){
-        next();
-    }else{
-        prev();
-    }
-         
-
-   /* function swipe(){
-        let lists_wrap = document.querySelector('.toprank .lists_wrap');
-        let num = 0;
-        let currentX;
-        function initTouch(e) {
-            initialX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
-            console.log(initialX);
-        };
-
-        function swipeDirection(e) {
-            if (initialX !== null) {
-                //const currentX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
-                let diffX = initialX - currentX;
-                if(diffX < 0 ){ //  console.log("to left")
-                    num = num - 1;
-                    for(let i = 0; i < lists.length; i++){
-                        tabs[i].classList.remove('active');
-                        lists[i].classList.remove('active');
-                    }
-                    if(num < 0){
-                        tabs[0].classList.add('active');
-                        lists[0].classList.add('active');
-                        tabsBar.style.left = tabs[0].offsetLeft + document.body.scrollLeft + "px";
-                        tabsBar.style.width = tabs[0].offsetWidth + "px";
-                        console.log('num < 0 : ', num)
-                        return num = 0;
-                    }
-                    else{
-                        tabs[num].classList.add('active');
-                        lists[num].classList.add('active');
-                        tabsBar.style.left = tabs[num].offsetLeft + document.body.scrollLeft + "px";
-                        tabsBar.style.width = tabs[num].offsetWidth + "px";
-                        document.querySelector('div.tabs_wrap').classList.add('blur');
-                        console.log('num < 0 else : ',num)
-                        return num;
-                    }
-                }
-                else{ // console.log("to right")
-                    num = num + 1;
-                    for(let i = 0; i < lists.length; i++){
-                        tabs[i].classList.remove('active');
-                        lists[i].classList.remove('active');
-                    }
-                    if(num > lists.length){
-                        tabs[lists.length - 1].classList.add('active');
-                        lists[lists.length - 1].classList.add('active');
-                        tabsBar.style.left = tabs[num].offsetLeft + document.body.scrollLeft + "px";
-                        tabsBar.style.width = tabs[num].offsetWidth + "px";
-                        document.querySelector('div.tabs_wrap').classList.remove('blur');
-                        console.log('num > lists.length : ',num)
-                        return num = lists.length - 1;
-                    }
-                    else{
-                        tabs[num].classList.add('active');
-                        lists[num].classList.add('active');
-                        tabsBar.style.left = tabs[num].offsetLeft + document.body.scrollLeft + "px";
-                        tabsBar.style.width = tabs[num].offsetWidth + "px";
-                        console.log('num > lists.length else : ',num)
-                        return num;
-                    }
-                }
-            }
-            initialX = null;
-           
-        }
-        lists_wrap.addEventListener("touchstart", initTouch);
-        lists_wrap.addEventListener("touchend", swipeDirection);
-
-
-        /*function toprank_tab(){
-            for(let i = 0; i < lists.length; i++){
-                tabs[i].addEventListener('click', function(e){
-                    let e2 = e ? e : window.event;
-                    for(let i = 0; i < lists.length; i++){
-                        tabs[i].classList.remove('active');
-                        lists[i].classList.remove('active');
-                    }
-                    tabs[i].classList.add('active');
-                    lists[i].classList.add('active');
-                    tabsBar.style.left = tabs[i].offsetLeft + document.body.scrollLeft + "px";
-                    tabsBar.style.width = tabs[i].offsetWidth + "px";
-                });
-            }
-        }*/
-    //}
-    //swipe();
-
 
     ///////////////////////////////////////////////////////////////////
 
     if(screen.width >= 768){ // tab
-        // ===== toprank swipe tab =====
-
-        // ===== category mobile =====
-        cateMobVersion;
-
-        // ===== toprank swipe mob =====
-        
         // ===== event slide =====
         function rolling_slides(_targetWrap){
 
@@ -651,5 +480,20 @@ if(isMobile) {  //tab, mob
 
         rolling_slides(".event");
            
+    }
+    else { // mob
+        // ===== tooltips & scrollY 제어 =====
+        tootipClick();
+        for(let i = 0; i < btnTooltips.length; i++){
+            btnTooltips[i].addEventListener('click', function(e){
+                document.body.classList.add('scroll_disable');
+            });
+        }
+        document.getElementById("tt_close").addEventListener('click',function(e){
+            document.body.classList.remove('scroll_disable');
+        });
+
+        // ===== category mobile =====
+        cateMobVersion;
     }
 }
