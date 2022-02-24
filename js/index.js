@@ -485,6 +485,8 @@ rolling_slides(".bestseller");
                 initialX = null;
             }
         }
+        tabUl.addEventListener("touchstart", initTouch);
+        tabUl.addEventListener("touchmove", swipeDirection);
     }
     else { // mob
         // ===== tooltips & scrollY 제어 =====
@@ -548,6 +550,8 @@ rolling_slides(".bestseller");
             }
                 initialX = null;
         }
+        tabUl.addEventListener("touchstart", initTouch);
+        tabUl.addEventListener("touchmove", swipeDirection);
         
 
         function rolling_slides(_targetWrap){
@@ -602,9 +606,6 @@ rolling_slides(".bestseller");
                     
                     startSetItv();
                 });
-                
-                
-                
             }
             function nextItv(){
                 movement(-1);
@@ -718,11 +719,6 @@ rolling_slides(".bestseller");
             dots.removeClass("active");
             dots.eq(num).addClass("active");
             }*/
+        }   
     }
-}
-
-    
-tabUl.addEventListener("touchstart", initTouch);
-tabUl.addEventListener("touchmove", swipeDirection);
-
 }
