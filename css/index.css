@@ -167,8 +167,8 @@
 	section.toprank div.tabs_wrap { position: relative; width: 100%; border-bottom: 1px solid #ddd; z-index: 1;  }
 	section.toprank div.tabs_wrap::after { content: ""; position: absolute; right: 0; bottom: 1px; width: 50px; height: 50px;
 	background: rgba(255, 255, 255, 0.8); box-shadow: -5px 0 5px rgba(255, 255, 255, 0.8); }
-	section.toprank div.tabs_wrap ul { position: relative; width: max-content; margin: 0 auto; }
-	section.toprank div.tabs_wrap li { float: left;  padding: 0.625em; margin-right: 6.2px;  }
+	section.toprank div.tabs_wrap ul { position: relative; left: 0; margin: 0 auto; white-space: nowrap; overflow-x: scroll;}
+	section.toprank div.tabs_wrap li { display: inline-block; padding: 0.625em; margin-right: 6.2px;  }
 	section.toprank div.tabs_wrap li.active > button { color: #803636; font-weight: bold; }
 	section.toprank div.tabs_wrap li > button { display: block; width: 100%; font-size: 1em;  text-align: center; }
 	section.toprank div.tabs_wrap li:nth-child(1) { margin-left: 20px; }
@@ -445,8 +445,8 @@
 	section.toprank div.tabs_wrap { position: relative; width: 100%; border-bottom: 1px solid #ddd; z-index: 1;  }
 	section.toprank div.tabs_wrap[class~="blur"]::after { content: ""; position: absolute; right: 0; bottom: 1px; width: 50px; height: 50px;
 	background: rgba(255, 255, 255, 0.8); box-shadow: -5px 0 5px rgba(255, 255, 255, 0.8); }
-	section.toprank div.tabs_wrap ul { position: relative; left: 0; width: max-content; margin: 0 auto; transform: translateX(0); transition: transform 0.5s; }
-	section.toprank div.tabs_wrap li { float: left;  padding: 0.625em; margin-right: 6.2px;  }
+	section.toprank div.tabs_wrap ul { position: relative; left: 0; margin: 0 auto; white-space: nowrap; overflow-x: scroll;}
+	section.toprank div.tabs_wrap li { display: inline-block; padding: 0.625em; margin-right: 6.2px;  }
 	section.toprank div.tabs_wrap li.active > button { color: #803636; font-weight: bold; }
 	section.toprank div.tabs_wrap li > button { display: block; width: 100%; font-size: 1.375em;  text-align: center; }
 	section.toprank div.tabs_wrap li:nth-child(1) { margin-left: 20px; }

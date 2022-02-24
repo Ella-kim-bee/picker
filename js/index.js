@@ -397,7 +397,7 @@ if(isMobile) {  //tab, mob
 
     // ===== toprank swipe =====
 
-    let curPos = 0;
+    /*let curPos = 0;
     let postion = 0;
     let start_x, end_x;
     const IMAGE_WIDTH = document.querySelector('.toprank .lists_wrap').offsetWidth;
@@ -419,7 +419,7 @@ if(isMobile) {  //tab, mob
     function tab(){
         if(tabs[curPos].offsetLeft + document.body.scrollLeft >= window.innerWidth - tabs[lists.length - 1].offsetWidth){
             tab_num = tab_num + 1;
-            tab_ul.style.transform = `translateX(-${tabs[curPos - 1].offsetWidth}px)`;
+            tab_ul.style.transform = `translateX(-${tabs[curPos - 1].offsetWidth + tabs[curPos - 1].offsetLeft}px)`;
             console.log(tab_num)
             console.log(tabsBar.style.left)
             return tab_num;           
@@ -567,7 +567,7 @@ if(isMobile) {  //tab, mob
                 });
             }
         }*/
-    }
+    //}
     //swipe();
 
 
