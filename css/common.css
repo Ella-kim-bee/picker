@@ -111,6 +111,8 @@ border-radius: 50%; }
 .btn_top > span::after { content: ""; position: absolute; display: inline-block; top: -1.66666em; left: 0.25em; 
 width: 18px; height: 18px;  background: url("../images/img_common_btn_top.png") no-repeat; background-size: cover; }
 
+.scroll_disable { height: 100%; overflow: hidden; } /*scroll 제어*/
+
 
 
 
