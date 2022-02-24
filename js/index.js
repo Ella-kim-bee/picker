@@ -409,7 +409,7 @@ if(isMobile) {  //tab, mob
     if(screen.width >= 768){ // tab
         
     }
-    else if(screen.width < 768){ // mob
+    else{ // mob
         // ===== tooltips & scrollY 제어 =====
         tootipClick();
         for(let i = 0; i < btnTooltips.length; i++){
